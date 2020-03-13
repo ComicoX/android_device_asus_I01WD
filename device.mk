@@ -107,8 +107,6 @@ PRODUCT_PACKAGES += \
     libqcomfm_jni \
     qcom.fmradio
 
-PRODUCT_BOOT_JARS += qcom.fmradio
-
 # HotwordEnrollement
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/privapp-permissions-hotword.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-hotword.xml
@@ -119,25 +117,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keylayout/fts_ts.kl:system/usr/keylayout/fts_ts.kl \
     $(LOCAL_PATH)/keylayout/goodixfp.kl:system/usr/keylayout/goodixfp.kl \
     $(LOCAL_PATH)/keylayout/googlekey_input.kl:system/usr/keylayout/googlekey_input.kl
-
-# Live Wallpapers
-PRODUCT_PACKAGES += \
-    LiveWallpapers \
-    LiveWallpapersPicker \
-    VisualizationWallpapers \
-    librs_jni
-
-# Properties
-BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
-
-PRODUCT_PACKAGES += \
-    vndk_package
-
-PRODUCT_PACKAGES += \
-    android.hidl.base@1.0
-
-PRODUCT_PACKAGES += \
-    vendor.display.config@1.5
 
 # Exclude vibrator from InputManager
 PRODUCT_COPY_FILES += \
@@ -185,17 +164,11 @@ PRODUCT_PACKAGES += \
 
 # Update engine
 PRODUCT_PACKAGES += \
-    otapreopt_script \
+    otapreopt_script
     update_engine \
     update_engine_sideload \
     update_verifier
 
-PRODUCT_HOST_PACKAGES += \
-    brillo_update_payload
-
 PRODUCT_PACKAGES_DEBUG += \
     update_engine_client
 
-# WiFi Display
-PRODUCT_PACKAGES += \
-    libnl
