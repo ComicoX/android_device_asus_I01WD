@@ -28,22 +28,11 @@ priv-app/AsusCamera/lib/arm64/libyuv_util.so
 priv-app/AsusCamera/lib/arm64/libUndistort.so
 priv-app/AsusCamera/lib/arm64/libasusundistort.so
 priv-app/AsusCamera/lib/arm64/libarcsoft_object_tracking.so
--priv-app/MotorService/MotorService.apk;PRESIGNED
+-priv-app/MotorService/MotorService.apk
 priv-app/MotorService/lib/arm64/libAsusLaserSensorHAL.so
 priv-app/MotorService/lib/arm64/libAsusMotorDriverHAL.so
 priv-app/MotorService/lib/arm64/libjni_laser.so
 priv-app/MotorService/lib/arm64/libjni_motor.so
-lib64/DataSet/arch/DIT_List.cfg
-lib64/DataSet/ditSCidGen/msgchk.db
-lib64/DataSet/ispDB/ParameterDB.db
-lib64/libAsusRGBSensorHAL.so
-lib64/libxditk_DIT_MSMv1.so
-lib64/libxditk_DIT_Manager.so
-lib64/libxditk_ISP.so
-lib64/libxditk_arch.so
-lib64/libxditk_ditArchLIB.so
-lib64/libxditk_ditBSP.so
-lib64/libxditk_ditBSP_JNI.so
 
 # CNE
 etc/cne/Nexus/ATT/ATT_profiles.xml
