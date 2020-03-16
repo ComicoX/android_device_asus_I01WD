@@ -145,6 +145,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
 
+# Remove unwanted packages
+PRODUCT_PACKAGES += \
+    RemovePackages
+
 # Telephony
 PRODUCT_PACKAGES += \
     ims-ext-common \
@@ -168,7 +172,7 @@ PRODUCT_PACKAGES += \
 
 # Update engine
 PRODUCT_PACKAGES += \
-    otapreopt_script
+    otapreopt_script \
     update_engine \
     update_engine_sideload \
     update_verifier
