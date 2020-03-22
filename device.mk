@@ -101,6 +101,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.light@2.0-service.asus_msmnile
 
+# Prebuilt
+PRODUCT_COPY_FILES += \
+    $(call find-copy-subdir-files,*,device/asus/I01WD/prebuilt/system,system)
+
 # FM
 PRODUCT_PACKAGES += \
     FM2 \
