@@ -69,7 +69,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     debug.sf.enable_hwc_vds=1 \
     ro.asus.hdr=1 \
-    ro.asus.wcg=1
+    ro.asus.wcg=1 \
+    persist.debug.wfd.enable=1
 
 # GPS
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -94,6 +95,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Vendor
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.qti.va_aosp.support=1
+
 # Maintainer
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.havoc.maintainer=Comico
