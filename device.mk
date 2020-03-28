@@ -140,6 +140,10 @@ PRODUCT_PACKAGES += \
     SecureElement \
     com.android.nfc_extras
 
+# Doze
+PRODUCT_PACKAGES += \
+    AsusDoze
+
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power@1.2-service.asus_msmnile
