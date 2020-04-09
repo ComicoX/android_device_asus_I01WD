@@ -34,6 +34,37 @@ priv-app/MotorService/lib/arm64/libAsusMotorDriverHAL.so
 priv-app/MotorService/lib/arm64/libjni_laser.so
 priv-app/MotorService/lib/arm64/libjni_motor.so
 
+# Asus Camera Deps
+product/framework/vendor.qti.hardware.sensorscalibrate-V1.0-java.jar
+product/lib64/libQTEEConnector_system.so
+product/lib64/libseccam.so
+product/lib64/vendor.display.postproc@1.0.so
+product/lib64/vendor.qti.hardware.cvp@1.0.so
+product/lib64/vendor.qti.hardware.scve.objecttracker@1.0-adapter-helper.so
+product/lib64/vendor.qti.hardware.scve.objecttracker@1.0.so
+product/lib64/vendor.qti.hardware.scve.panorama@1.0-adapter-helper.so
+product/lib64/vendor.qti.hardware.scve.panorama@1.0.so
+product/lib64/vendor.qti.hardware.sensorscalibrate@1.0.so
+product/lib64/libQTEEConnector_system.so
+product/lib64/libimscamera_jni.so
+lib64/libarcsoft_beautyshot.so
+lib64/libarcsoft_face_detection.so
+lib64/libarcsoft_face_tracking.so
+lib64/libarcsoft_hdr.so
+lib64/libarcsoft_low_light_shot.so
+lib64/libarcsoft_nighthawk.so
+lib64/libarcsoft_piczoom.so
+product/lib/libQTEEConnector_system.so
+product/lib/libseccam.so
+product/lib/vendor.display.postproc@1.0.so
+product/lib/vendor.qti.hardware.cvp@1.0.so
+product/lib/vendor.qti.hardware.scve.objecttracker@1.0-adapter-helper.so
+product/lib/vendor.qti.hardware.scve.objecttracker@1.0.so
+product/lib/vendor.qti.hardware.scve.panorama@1.0-adapter-helper.so
+product/lib/vendor.qti.hardware.scve.panorama@1.0.so
+product/lib/vendor.qti.hardware.sensorscalibrate@1.0.so
+product/lib/libimscamera_jni.so
+
 # Media
 lib/libFileMux.so
 lib/libmmosal.so
@@ -98,7 +129,6 @@ lib/fm_helium.so
 lib/libfm-hci.so
 product/lib64/vendor.qti.hardware.fm@1.0.so
 product/lib/vendor.qti.hardware.fm@1.0.so
-product/lib64/vendor.qti.hardware.fm@1.0.so
 
 # Gallery
 -priv-app/AsusGallery/AsusGallery.apk;PRESIGNED
@@ -168,7 +198,8 @@ product/lib64/lib-imsvt.so
 product/lib64/lib-imsvtutils.so
 product/lib64/vendor.qti.imsrtpservice@2.0.so
 product/lib64/vendor.qti.imsrtpservice@2.1.so
--product/priv-app/ims/ims.apk|56fd010d307b28bbe05db570a510679108283628
+# Smali edit: https://gist.github.com/luca020400/b0152c9b77e55f50eee0513cf666f61c
+-product/priv-app/ims/ims.apk|7665c3a2369168b90aa15808224bb169d37c3327
 
 # HotwordEnrollment
 -product/priv-app/HotwordEnrollmentOKGoogleWCD9340/HotwordEnrollmentOKGoogleWCD9340.apk
@@ -191,53 +222,3 @@ product/etc/permissions/telephonyservice.xml
 product/framework/QtiTelephonyServicelibrary.jar
 product/framework/embmslibrary.jar
 product/framework/qcrilhook.jar
--product/framework/qti-telephony-common.jar|a8806ba5a7759b7d5fd97707a6a436d6c432e441
-product/lib/vendor.qti.hardware.radio.qtiradio@1.0.so
-product/lib/vendor.qti.hardware.radio.qtiradio@2.0.so
-product/lib/vendor.qti.hardware.radio.qtiradio@2.1.so
-product/lib/vendor.qti.hardware.radio.qtiradio@2.2.so
-product/lib/vendor.qti.hardware.radio.qtiradio@2.3.so
-product/lib64/vendor.qti.hardware.radio.qtiradio@1.0.so
-product/lib64/vendor.qti.hardware.radio.qtiradio@2.0.so
-product/lib64/vendor.qti.hardware.radio.qtiradio@2.1.so
-product/lib64/vendor.qti.hardware.radio.qtiradio@2.2.so
-product/lib64/vendor.qti.hardware.radio.qtiradio@2.3.so
-
-# WiFi Display
--priv-app/WfdService/WfdService.apk
-bin/wfdservice
-etc/init/wfdservice.rc
-etc/wfdconfigsink.xml
--framework/WfdCommon.jar
-lib/libFileMux.so
-lib/libmmparser_lite.so
-lib/libmmrtpdecoder.so
-lib/libmmrtpencoder.so
-lib/libOmxMux.so
-lib/libwfduibcsinkinterface.so
-lib/libwfdmminterface.so
-lib/libwfdclient.so
-lib/libwfdcommonutils.so
-lib/libwfdmmsink.so
-lib/libwfdsinksm.so
-lib/libwfdsm.so
-lib/libwfduibcsrcinterface.so
-lib/libwfduibcsink.so
-lib/libwfdavenhancements.so
-lib/libwfdrtsp.so
-lib/libwfdconfigutils.so
-lib/libwfdservice.so
-lib/libwfduibcsrc.so
-lib/libwfduibcinterface.so
-lib/com.qualcomm.qti.wifidisplayhal@1.0.so
-product/lib/vendor.qti.hardware.wifidisplaysession@1.0.so
-lib64/libwfdsm.so
-lib64/libFileMux.so
-lib64/libmmparser_lite.so
-lib64/libmmrtpdecoder.so
-lib64/libmmrtpencoder.so
-lib64/libwfdsinksm.so
-lib64/libOmxMux.so
-lib64/libwfdclient.so
-lib64/libwfdnative.so
-product/lib64/vendor.qti.hardware.wifidisplaysession@1.0.so
