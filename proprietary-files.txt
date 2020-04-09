@@ -65,15 +65,6 @@ product/lib/vendor.qti.hardware.scve.panorama@1.0.so
 product/lib/vendor.qti.hardware.sensorscalibrate@1.0.so
 product/lib/libimscamera_jni.so
 
-# Media
-lib/libFileMux.so
-lib/libmmosal.so
-lib/libmmparser_lite.so
-lib/libOmxMux.so
-lib64/libmmosal.so
--vendor/lib/libplatformconfig.so
--vendor/lib64/libplatformconfig.so
-
 # CNE
 etc/cne/Nexus/ATT/ATT_profiles.xml
 etc/cne/Nexus/ROW/ROW_profiles.xml
