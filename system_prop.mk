@@ -57,7 +57,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.asus.camera.undistortion.video=0:0;1:0;2:0;3:0 \
     ro.asus.camera.use_frame_processor=0 \
     vendor.camera.expTimeMax=0 \
-    vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.qualcomm.saltproject2,com.asus.camera,com.asus.snapcam,com.asus.camera2
+    vendor.camera.aux.packagelist=com.qualcomm.saltproject2,com.asus.camera,com.asus.snapcam,com.asus.camera2
 
 # DPM
 PRODUCT_PROPERTY_OVERRIDES += \
