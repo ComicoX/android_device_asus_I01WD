@@ -686,6 +686,9 @@
         <item>com.android.touch.gestures.KeyHandler</item>
     </string-array>
 
+     <!-- Force enable hardware keys -->
+    <bool name="config_forceEnableHardwareKeys">true</bool>
+
    <!-- The list of vendor package signatures that should also be considered
          platform signatures, specifically for use on devices with a vendor partition. -->
     <string-array name="config_vendorPlatformSignatures" translatable="false">
