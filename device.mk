@@ -88,6 +88,10 @@ PRODUCT_PACKAGES_DEBUG += \
 PRODUCT_PACKAGES += \
     CameraTile
 
+# AssistKey
+PRODUCT_PACKAGES += \
+    KeyHandler
+
 # Common init scripts
 PRODUCT_PACKAGES += \
     init.qcom.rc \
