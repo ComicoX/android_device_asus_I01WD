@@ -129,6 +129,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	persist.radio.data_con_rprt=1 \
 	persist.radio.calls.on.ims=1
 
+#Simulate sdcard on /data/media
+#
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.fuse_sdcard=true
+
 # Maintainer
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.havoc.maintainer=Comico
