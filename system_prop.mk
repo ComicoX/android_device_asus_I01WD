@@ -89,6 +89,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.asus.wcg=1 \
     persist.debug.wfd.enable=1 \
     persist.sys.wfd.virtual=0
+
+# system prop for opengles version
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.opengles.version=196610
     
 # GPS
 PRODUCT_PROPERTY_OVERRIDES += \
