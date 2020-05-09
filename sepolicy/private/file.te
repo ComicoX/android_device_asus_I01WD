@@ -19,4 +19,8 @@ type sysfs_graphics, sysfs_type, fs_type;
 type sysfs_gesture, sysfs_type, fs_type;
 type proc_touchscreen, proc_type, sysfs_type, fs_type;
 
+# FPS Info
+type sysfs_fps, sysfs_type, fs_type;
+
+# Battery
 type sysfs_battery_supply, sysfs_type, fs_type;
