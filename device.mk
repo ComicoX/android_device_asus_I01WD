@@ -88,9 +88,9 @@ PRODUCT_PACKAGES_DEBUG += \
 PRODUCT_PACKAGES += \
     CameraTile
 
-# AssistKey
+# ZenParts
 PRODUCT_PACKAGES += \
-    KeyHandler
+    ZenParts
 
 # Common init scripts
 PRODUCT_PACKAGES += \
