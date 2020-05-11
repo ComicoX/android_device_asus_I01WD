@@ -17,10 +17,14 @@ package org.lineageos.cameratile;
 
 import android.content.Intent;
 import android.graphics.drawable.Icon;
+import android.hardware.Camera;
 import android.service.quicksettings.Tile;
 import android.service.quicksettings.TileService;
+import android.widget.Toast;
 
 public class CameraTile extends TileService {
+
+    private Camera mCamera;
 
     @Override
     public void onStartListening() {
@@ -31,12 +35,43 @@ public class CameraTile extends TileService {
         getQsTile().updateTile();
     }
 
+    private void closeCamera() {
+        if (mCamera != null) {
+            mCamera.release();
+            mCamera = null;
+        }
+    }
+
+    private boolean checkCamera() {
+        closeCamera();
+        try {
+            mCamera = mCamera.open(id);
+
+            //Close camera
+            closeCamera();
+            return false;
+        } catch (Exception e) {
+            return true;
+        }
+
+        return false;
+    }
+
     @Override
     public void onClick() {
         super.onClick();
 
-        Intent intent = new Intent("com.asus.motorservice.action.WIDGET_BTN_CLICKED");
-        intent.setPackage("com.asus.motorservice");
-        sendBroadcast(intent);
+        //Actually check to see if the user is using the camera before giving controll to the motor
+        if(checkCamera() == true)
+        {
+            Intent intent = new Intent("com.asus.motorservice.action.WIDGET_BTN_CLICKED");
+            intent.setPackage("com.asus.motorservice");
+            sendBroadcast(intent);
+        }
+        else
+        {
+            //Send a toast
+            Toast.makeText(this, "Please open a camera app before rotating the camera!", Toast.LENGTH_LONG).show();
+        }
     }
 }
