@@ -84,10 +84,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES_DEBUG += \
     bootctl
 
-# Camera
-PRODUCT_PACKAGES += \
-    CameraTile
-
 # ZenParts
 PRODUCT_PACKAGES += \
     ZenParts

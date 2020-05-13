@@ -45,7 +45,7 @@ public class CameraTile extends TileService {
     private boolean checkCamera() {
         closeCamera();
         try {
-            mCamera = mCamera.open(id);
+            mCamera = mCamera.open();
 
             //Close camera
             closeCamera();
@@ -53,8 +53,6 @@ public class CameraTile extends TileService {
         } catch (Exception e) {
             return true;
         }
-
-        return false;
     }
 
     @Override
