@@ -88,6 +88,10 @@ PRODUCT_PACKAGES_DEBUG += \
 PRODUCT_PACKAGES += \
     CameraTile
 
+# ZenParts
+PRODUCT_PACKAGES += \
+    ZenParts
+
 # Common init scripts
 PRODUCT_PACKAGES += \
     init.qcom.rc \
