@@ -155,10 +155,6 @@ PRODUCT_PACKAGES += \
     SecureElement \
     com.android.nfc_extras
 
-# Doze
-PRODUCT_PACKAGES += \
-    AsusDoze
-
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power@1.2-service.asus_msmnile
@@ -183,10 +179,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_BOOT_JARS += \
     telephony-ext
-
-# Touch
-PRODUCT_PACKAGES += \
-    lineage.touch@1.0-service.asus_msmnile
 
 # Trust HAL
 PRODUCT_PACKAGES += \

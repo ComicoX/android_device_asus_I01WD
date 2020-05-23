@@ -15,7 +15,7 @@
         android:minSdkVersion="27" />
     <application
         android:icon="@drawable/ic_launcher"
-        android:label="@string/advanced_settings"
+        android:label="@string/zenfone_settings"
         android:theme="@style/AppTheme"
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
         tools:replace="android:appComponentFactory"
@@ -23,7 +23,7 @@
         <activity
             android:name="com.asus.zenparts.DeviceSettingsActivity"
             android:exported="false"
-            android:label="@string/advanced_settings"
+            android:label="@string/zenfone_settings"
             android:launchMode="singleTask" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -33,7 +33,7 @@
         <activity-alias
             android:name="com.asus.zenparts.DeviceSettings"
             android:exported="true"
-            android:label="@string/advanced_settings"
+            android:label="@string/zenfone_settings"
             android:targetActivity="DeviceSettingsActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -41,7 +41,7 @@
             </intent-filter>
         </activity-alias>
         <activity
-            android:name="com.asus.zenparts.GestureSettingsActivity"
+            android:name="com.asus.zenparts.device.GestureSettingsActivity"
             android:exported="false"
             android:label="@string/category_gestures_title"
             android:launchMode="singleTask" >
@@ -51,7 +51,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.asus.zenparts.DozeSettingsActivity"
+            android:name="com.asus.zenparts.device.DozeSettingsActivity"
             android:exported="false"
             android:label="@string/doze_category_title"
             android:launchMode="singleTask" >

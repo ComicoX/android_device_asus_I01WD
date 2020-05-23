@@ -63,7 +63,7 @@ public class GloveModeTileService extends TileService {
         super.onClick();
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
         enabled = GloveModeSwitch.isCurrentlyEnabled(this);
-        Utils.writeValue(GloveModeSwitch.getFile(), enabled ? "0" : "1");
+        ZenUtils.writeValue(GloveModeSwitch.getFile(), enabled ? "0" : "1");
         sharedPrefs.edit().putBoolean(DeviceSettings.KEY_GLOVE_SWITCH, enabled ? false : true).commit();
         getQsTile().setState(enabled ? Tile.STATE_INACTIVE : Tile.STATE_ACTIVE);
         getQsTile().updateTile();

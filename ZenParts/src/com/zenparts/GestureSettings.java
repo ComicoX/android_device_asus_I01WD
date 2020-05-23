@@ -283,7 +283,7 @@ public class GestureSettings extends PreferenceFragment implements
         String gestureTypeMapping = Settings.System.getString(getContext().getContentResolver(), Settings.System.CUSTOM_BUTTON_EXTRA_KEY_MAPPING);
         Settings.System.putString(getContext().getContentResolver(), Settings.System.CUSTOM_BUTTON_EXTRA_KEY_MAPPING, gestureType);
 
-        Utils.writeLine(GESTURE_CONTROL_PATH, gestureType);
+        ZenUtils.writeLine(GESTURE_CONTROL_PATH, gestureType);
     }
 
     private boolean isGestureSupported(String key) {

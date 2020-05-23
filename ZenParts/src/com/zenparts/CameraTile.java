@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.lineageos.cameratile;
+package com.asus.zenparts;
 
 import android.content.Intent;
 import android.graphics.drawable.Icon;
@@ -30,7 +30,7 @@ public class CameraTile extends TileService {
     public void onStartListening() {
         super.onStartListening();
 
-        getQsTile().setIcon(Icon.createWithResource(this, R.drawable.ic_camera));
+        getQsTile().setIcon(Icon.createWithResource(this, R.drawable.ic_camera_tile));
         getQsTile().setState(Tile.STATE_ACTIVE);
         getQsTile().updateTile();
     }
