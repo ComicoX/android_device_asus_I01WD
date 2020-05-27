@@ -1,5 +1,5 @@
 /*
-* Copyright (C) 2016 The OmniROM Project
+* Copyright (C) 2020 Comico
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -37,24 +37,21 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 import android.util.Log;
 
-public class DeviceSettings extends PreferenceFragment implements
+public class ZenPartsSettings extends PreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
-    public static final String KEY_SETTINGS_PREFIX = "device_setting_";
+    public static final String KEY_SETTINGS_PREFIX = "zenparts_setting_";
     public static final String KEY_GLOVE_SWITCH = "glove";
-
-    private static final String KEY_CATEGORY_SCREEN = "screen";
     private static TwoStatePreference mGloveModeSwitch;
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
         setPreferencesFromResource(R.xml.main, rootKey);
 
+        //GloveMode
         mGloveModeSwitch = (TwoStatePreference) findPreference(KEY_GLOVE_SWITCH);
-        mGloveModeSwitch.setEnabled(GloveModeSwitch.isSupported());
         mGloveModeSwitch.setChecked(GloveModeSwitch.isCurrentlyEnabled(this.getContext()));
         mGloveModeSwitch.setOnPreferenceChangeListener(new GloveModeSwitch(getContext()));
-
     }
 
     @Override

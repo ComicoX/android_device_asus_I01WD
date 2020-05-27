@@ -15,7 +15,7 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *
 */
-package com.asus.zenparts;
+package com.asus.zenparts.touch;
 
 import android.app.ActivityManagerNative;
 import android.app.NotificationManager;
@@ -73,7 +73,6 @@ public class KeyHandler implements AlternativeDeviceKeyHandler {
     protected static final int GESTURE_REQUEST = 1;
     private static final int GESTURE_WAKELOCK_DURATION = 2000;
 
-    private static final int FP_GESTURE_LONG_PRESS = 187;
     private static final int KEY_DOUBLE_TAP = 143;
     private static final int KEY_HOME = 102;
     private static final int KEY_BACK = 158;
@@ -99,8 +98,7 @@ public class KeyHandler implements AlternativeDeviceKeyHandler {
 
     private static final int[] sSupportedGestures = new int[]{
         KEY_DOUBLE_TAP,
-        KEY_GOOGLE_APP,
-        FP_GESTURE_LONG_PRESS
+        KEY_GOOGLE_APP
     };
 
     private static final int[] sProxiCheckedGestures = new int[]{
@@ -543,10 +541,6 @@ public class KeyHandler implements AlternativeDeviceKeyHandler {
     }
 
     private String getGestureValueForFPScanCode(int scanCode) {
-        if (FP_GESTURE_LONG_PRESS == scanCode) {
-            return Settings.System.getStringForUser(mContext.getContentResolver(),
-                   GestureSettings.DEVICE_GESTURE_MAPPING_0, UserHandle.USER_CURRENT);
-        }
         if (KEY_GOOGLE_APP == scanCode) {
             return Settings.System.getStringForUser(mContext.getContentResolver(),
                    GestureSettings.DEVICE_GESTURE_MAPPING_7, UserHandle.USER_CURRENT);

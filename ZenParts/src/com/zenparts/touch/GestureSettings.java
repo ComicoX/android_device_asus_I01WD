@@ -15,7 +15,7 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *
 */
-package com.asus.zenparts;
+package com.asus.zenparts.touch;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -54,7 +54,6 @@ public class GestureSettings extends PreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
     public static final String KEY_PROXI_SWITCH = "proxi";
-    public static final String KEY_OFF_SCREEN_GESTURE_FEEDBACK_SWITCH = "off_screen_gesture_feedback";
     public static final String KEY_SWIPEUP_SWITCH = "swipeup";
     public static final String KEY_SETTINGS_SWIPEUP_PREFIX = "gesture_setting_";
 
@@ -74,11 +73,6 @@ public class GestureSettings extends PreferenceFragment implements
     public static final String KEY_Z_APP = "z_gesture_app";
     public static final String KEY_GOOGLE_APP = "smart_switch";
 
-    public static final String KEY_FP_GESTURE_CATEGORY = "key_fp_gesture_category";
-    public static final String KEY_FP_GESTURE_DEFAULT_CATEGORY = "gesture_settings";
-
-    public static final String FP_GESTURE_LONG_PRESS_APP = "fp_long_press_gesture_app";
-
     public static final String DEVICE_GESTURE_MAPPING_0 = "device_gesture_mapping_0_0";
     public static final String DEVICE_GESTURE_MAPPING_1 = "device_gesture_mapping_1_0";
     public static final String DEVICE_GESTURE_MAPPING_2 = "device_gesture_mapping_2_0";
@@ -90,7 +84,6 @@ public class GestureSettings extends PreferenceFragment implements
 
     private TwoStatePreference mProxiSwitch;
     private TwoStatePreference mSwipeUpSwitch;
-    private AppSelectListPreference mFPLongPressApp;
     private AppSelectListPreference mLetterCGesture;
     private AppSelectListPreference mLetterEGesture;
     private AppSelectListPreference mLetterSGesture;
@@ -102,8 +95,6 @@ public class GestureSettings extends PreferenceFragment implements
     public static final String GESTURE_CONTROL_PATH = "/proc/driver/gesture_type";
     private static final String SWIPEUP_PATH = "/proc/driver/swipeup";
 
-    private PreferenceCategory fpGestures;
-    private boolean mFpDownSwipe;
     private List<AppSelectListPreference.PackageItem> mInstalledPackages = new LinkedList<AppSelectListPreference.PackageItem>();
     private PackageManager mPm;
 
@@ -115,12 +106,6 @@ public class GestureSettings extends PreferenceFragment implements
         mProxiSwitch = (TwoStatePreference) findPreference(KEY_PROXI_SWITCH);
         mProxiSwitch.setChecked(Settings.System.getInt(getContext().getContentResolver(),
                 Settings.System.CUSTOM_DEVICE_PROXI_CHECK_ENABLED, 1) != 0);
-
-        mFPLongPressApp = (AppSelectListPreference) findPreference(FP_GESTURE_LONG_PRESS_APP);
-        mFPLongPressApp.setEnabled(true);
-        String value = Settings.System.getString(getContext().getContentResolver(), DEVICE_GESTURE_MAPPING_0);
-        mFPLongPressApp.setValue(value);
-        mFPLongPressApp.setOnPreferenceChangeListener(this);
 
         mLetterCGesture = (AppSelectListPreference) findPreference(KEY_C_APP);
         mLetterCGesture.setEnabled(true);

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Copyright (C) 2014-2016 The OmniROM Project
+<!-- Copyright (C) 2020 Comico
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -20,18 +20,8 @@
         android:summary="@string/category_gestures_summary"
         android:persistent="false" >
         <intent android:action="android.intent.action.MAIN"
-                android:targetPackage="com.asus.zenparts.device"
-                android:targetClass="com.asus.zenparts.device.GestureSettingsActivity" />
-    </Preference>
-
-    <Preference
-        android:key="doze_category"
-        android:title="@string/doze_category_title"
-        android:summary="@string/doze_category_summary"
-        android:persistent="false" >
-        <intent android:action="android.intent.action.MAIN"
-                android:targetPackage="com.asus.zenparts.device"
-                android:targetClass="com.asus.zenparts.device.DozeSettingsActivity" />
+                android:targetPackage="com.asus.zenparts"
+                android:targetClass="com.asus.zenparts.touch.GestureSettingsActivity" />
     </Preference>
 
     <PreferenceCategory
@@ -43,5 +33,4 @@
             android:title="@string/glove_mode_title"
             android:persistent="false" />
     </PreferenceCategory>
-
 </PreferenceScreen>

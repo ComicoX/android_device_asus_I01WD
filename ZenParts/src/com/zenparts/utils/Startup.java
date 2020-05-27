@@ -15,7 +15,7 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *
 */
-package com.asus.zenparts;
+package com.asus.zenparts.utils;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -62,11 +62,6 @@ public class Startup extends BroadcastReceiver {
     }
 
     public static void restoreAfterUserSwitch(Context context) {
-        // fp down swipe
-        String value = Settings.System.getString(context.getContentResolver(), GestureSettings.DEVICE_GESTURE_MAPPING_0);
-        boolean enabled = !TextUtils.isEmpty(value) && !value.equals(AppSelectListPreference.DISABLED_ENTRY);
-        restore(getGestureFile(GestureSettings.FP_GESTURE_LONG_PRESS_APP), enabled);
-
         value = Settings.System.getString(context.getContentResolver(), GestureSettings.DEVICE_GESTURE_MAPPING_1);
         enabled = !TextUtils.isEmpty(value) && !value.equals(AppSelectListPreference.DISABLED_ENTRY);
         restore(getGestureFile(GestureSettings.KEY_C_APP), enabled);

@@ -15,7 +15,7 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *
 */
-package com.asus.zenparts;
+package com.asus.zenparts.glovemode;
 
 import android.annotation.TargetApi;
 import android.content.Intent;
@@ -23,7 +23,6 @@ import android.content.SharedPreferences;
 import android.service.quicksettings.Tile;
 import android.service.quicksettings.TileService;
 import androidx.preference.PreferenceManager;
-
 
 @TargetApi(24)
 public class GloveModeTileService extends TileService {

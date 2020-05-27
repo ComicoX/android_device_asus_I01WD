@@ -1,5 +1,5 @@
 /*
-* Copyright (C) 2017 The OmniROM Project
+* Copyright (C) 2020 Comico
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -30,9 +30,9 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
-public class DozeSettingsActivity extends Activity {
+public class ZenPartsSettingsActivity extends Activity {
 
-    private DozeSettings mDozeSettingsFragment;
+    private ZenPartsSettings mZenSettingsFragment;
     
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,12 +42,12 @@ public class DozeSettingsActivity extends Activity {
 
         Fragment fragment = getFragmentManager().findFragmentById(android.R.id.content);
         if (fragment == null) {
-            mDozeSettingsFragment = new DozeSettings();
+            mZenSettingsFragment = new DeviceSettings();
             getFragmentManager().beginTransaction()
-                .add(android.R.id.content, mDozeSettingsFragment)
+                .add(android.R.id.content, mZenSettingsFragment)
                 .commit();
         } else {
-            mDozeSettingsFragment = (DozeSettings) fragment;
+            mZenSettingsFragment = (DeviceSettings) fragment;
         }
     }
 

@@ -15,7 +15,7 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *
 */
-package com.asus.zenparts;
+package com.asus.zenparts.touch;
 
 import android.content.ComponentName;
 import android.content.Context;

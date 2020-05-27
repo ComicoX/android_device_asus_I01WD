@@ -21,7 +21,7 @@
         tools:replace="android:appComponentFactory"
         android:supportsRtl="true" >
         <activity
-            android:name="com.asus.zenparts.DeviceSettingsActivity"
+            android:name="DeviceSettingsActivity"
             android:exported="false"
             android:label="@string/zenfone_settings"
             android:launchMode="singleTask" >
@@ -31,29 +31,20 @@
             </intent-filter>
         </activity>
         <activity-alias
-            android:name="com.asus.zenparts.DeviceSettings"
+            android:name=".DeviceSettings"
             android:exported="true"
             android:label="@string/zenfone_settings"
             android:targetActivity="DeviceSettingsActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity-alias>
         <activity
-            android:name="com.asus.zenparts.device.GestureSettingsActivity"
+            android:name=".GestureSettingsActivity"
             android:exported="false"
             android:label="@string/category_gestures_title"
-            android:launchMode="singleTask" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name="com.asus.zenparts.device.DozeSettingsActivity"
-            android:exported="false"
-            android:label="@string/doze_category_title"
             android:launchMode="singleTask" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -70,13 +61,13 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <receiver android:name="com.asus.zenparts.Startup" >
+        <receiver android:name=".Startup" >
             <intent-filter android:priority="100" >
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
         </receiver>
         <service
-            android:name="com.asus.zenparts.GloveModeTileService"
+            android:name=".GloveModeTileService"
             android:icon="@drawable/ic_glove_tile"
             android:label="@string/glove_mode_title"
             android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
@@ -86,7 +77,7 @@
             </intent-filter>
         </service>
         <service
-            android:name="com.asus.zenparts.CameraTile"
+            android:name=".CameraTile"
             android:icon="@drawable/ic_camera_tile"
             android:label="@string/camera_label"
             android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">

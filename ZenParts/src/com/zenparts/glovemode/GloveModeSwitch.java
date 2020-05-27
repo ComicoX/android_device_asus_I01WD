@@ -15,7 +15,7 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *
 */
-package com.asus.zenparts;
+package com.asus.zenparts.glovemode;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -25,11 +25,9 @@ import androidx.preference.Preference.OnPreferenceChangeListener;
 import androidx.preference.PreferenceManager;
 
 public class GloveModeSwitch implements OnPreferenceChangeListener {
+    public static final String SETTINGS_KEY = ZenPartsSettings.KEY_SETTINGS_PREFIX + ZenPartsSettings.KEY_GLOVE_SWITCH;
 
     private static final String FILE = "/proc/driver/glove";
-
-    public static final String SETTINGS_KEY = DeviceSettings.KEY_SETTINGS_PREFIX + DeviceSettings.KEY_GLOVE_SWITCH;
-
     private Context mContext;
 
     public GloveModeSwitch(Context context) {
@@ -41,10 +39,6 @@ public class GloveModeSwitch implements OnPreferenceChangeListener {
             return FILE;
         }
         return null;
-    }
-
-    public static boolean isSupported() {
-        return ZenUtils.fileWritable(getFile());
     }
 
     public static boolean isCurrentlyEnabled(Context context) {

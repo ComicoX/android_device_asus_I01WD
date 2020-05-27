@@ -15,7 +15,7 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *
 */
-package com.asus.zenparts;
+package com.asus.zenparts.touch;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -25,15 +25,16 @@ import android.app.Fragment;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import androidx.preference.PreferenceFragment;
+import androidx.preference.Preference;
 import androidx.preference.PreferenceManager;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
-public class DeviceSettingsActivity extends Activity {
+public class GestureSettingsActivity extends Activity {
 
-    private DeviceSettings mDeviceSettingsFragment;
-    
+    private GestureSettings mGestureSettingsFragment;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,12 +43,12 @@ public class DeviceSettingsActivity extends Activity {
 
         Fragment fragment = getFragmentManager().findFragmentById(android.R.id.content);
         if (fragment == null) {
-            mDeviceSettingsFragment = new DeviceSettings();
+            mGestureSettingsFragment = new GestureSettings();
             getFragmentManager().beginTransaction()
-                .add(android.R.id.content, mDeviceSettingsFragment)
+                .add(android.R.id.content, mGestureSettingsFragment)
                 .commit();
         } else {
-            mDeviceSettingsFragment = (DeviceSettings) fragment;
+            mGestureSettingsFragment = (GestureSettings) fragment;
         }
     }
 

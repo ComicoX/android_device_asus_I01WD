@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.asus.zenparts;
+package com.asus.zenparts.camera;
 
 import android.content.Intent;
 import android.graphics.drawable.Icon;
