@@ -12,7 +12,7 @@
 /xrom(/.*)?             u:object_r:xrom_file:s0
 
 # FPS Info
-/sys/devices/virtual/graphics/fb0/measured_fps           u:object_r:sysfs_fps:s0
+/sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/sde-crtc-0/measured_fps           u:object_r:sysfs_fps:s0
 
 # HALs
 /system/bin/hw/lineage\.touch@1\.0-service\.asus_msmnile	u:object_r:hal_lineage_touch_asus_msmnile_exec:s0
