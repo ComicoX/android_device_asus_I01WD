@@ -136,7 +136,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Camera Watermark fix
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.product.device=
+    ro.product.device=""
 
 # Maintainer
 PRODUCT_PROPERTY_OVERRIDES += \

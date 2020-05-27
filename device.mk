@@ -269,6 +269,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/privapp-permissions-hotword.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-hotword.xml
 
+# Init
+PRODUCT_PACKAGES += \
+    libinit_zen
+
 # Input
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/idc/fts_ts.idc:system/usr/idc/fts_ts.idc \
