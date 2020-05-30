@@ -47,6 +47,8 @@ import java.util.LinkedList;
 import java.util.List;
 
 import com.android.settingslib.CustomDialogPreference;
+import com.asus.zenparts.utils.ZenUtils;
+import com.asus.zenparts.R;
 
 public class AppSelectListPreference extends CustomDialogPreference {
 

@@ -63,6 +63,7 @@ import com.android.internal.os.AlternativeDeviceKeyHandler;
 import com.android.internal.util.ArrayUtils;
 import com.android.internal.statusbar.IStatusBarService;
 import com.android.internal.util.havoc.Utils;
+import com.asus.zenparts.utils.ZenUtils;
 
 public class KeyHandler implements AlternativeDeviceKeyHandler {
 

@@ -24,6 +24,8 @@ import androidx.preference.Preference;
 import androidx.preference.Preference.OnPreferenceChangeListener;
 import androidx.preference.PreferenceManager;
 
+import com.asus.zenparts.utils.ZenUtils;
+
 public class GloveModeSwitch implements OnPreferenceChangeListener {
     public static final String SETTINGS_KEY = ZenPartsSettings.KEY_SETTINGS_PREFIX + ZenPartsSettings.KEY_GLOVE_SWITCH;
 
