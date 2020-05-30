@@ -15,7 +15,7 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *
 */
-package com.asus.zenparts.glovemode;
+package com.asus.zenparts;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -23,8 +23,6 @@ import android.provider.Settings;
 import androidx.preference.Preference;
 import androidx.preference.Preference.OnPreferenceChangeListener;
 import androidx.preference.PreferenceManager;
-
-import com.asus.zenparts.utils.ZenUtils;
 
 public class GloveModeSwitch implements OnPreferenceChangeListener {
     public static final String SETTINGS_KEY = ZenPartsSettings.KEY_SETTINGS_PREFIX + ZenPartsSettings.KEY_GLOVE_SWITCH;

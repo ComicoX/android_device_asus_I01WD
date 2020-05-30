@@ -15,7 +15,7 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *
 */
-package com.asus.zenparts.glovemode;
+package com.asus.zenparts;
 
 import android.annotation.TargetApi;
 import android.content.Intent;

@@ -15,7 +15,7 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *
 */
-package com.asus.zenparts.touch;
+package com.asus.zenparts;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -49,9 +49,6 @@ import android.os.UserHandle;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
-
-import com.asus.zenparts.utils.ZenUtils;
-import com.asus.zenparts.R;
 
 public class GestureSettings extends PreferenceFragment implements
         Preference.OnPreferenceChangeListener {

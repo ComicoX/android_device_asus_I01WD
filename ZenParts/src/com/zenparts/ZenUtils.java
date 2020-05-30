@@ -15,7 +15,7 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *
 */
-package com.asus.zenparts.utils;
+package com.asus.zenparts;
 
 import android.util.Log;
 

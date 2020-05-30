@@ -15,7 +15,7 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *
 */
-package com.asus.zenparts.touch;
+package com.asus.zenparts;
 
 import android.app.ActivityManagerNative;
 import android.app.NotificationManager;
@@ -63,7 +63,6 @@ import com.android.internal.os.AlternativeDeviceKeyHandler;
 import com.android.internal.util.ArrayUtils;
 import com.android.internal.statusbar.IStatusBarService;
 import com.android.internal.util.havoc.Utils;
-import com.asus.zenparts.utils.ZenUtils;
 
 public class KeyHandler implements AlternativeDeviceKeyHandler {
 

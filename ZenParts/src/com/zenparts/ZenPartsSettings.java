@@ -37,8 +37,6 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 import android.util.Log;
 
-import com.asus.zenparts.glovemode.GloveModeSwitch;
-
 public class ZenPartsSettings extends PreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
