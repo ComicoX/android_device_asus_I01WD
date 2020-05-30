@@ -124,7 +124,7 @@ void vendor_load_properties()
         property_override("ro.product.carrier", "ASUS-ASUS_I01WD-WW");
         property_override("ro.config.versatility", "CN");
     }
-    OG(INFO) << "Custom init has ended";
+    LOG(INFO) << "Custom init has ended";
 }
 }
 }
