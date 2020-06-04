@@ -24,3 +24,6 @@ type sysfs_fps, sysfs_type, fs_type;
 
 # Battery
 type sysfs_battery_supply, sysfs_type, fs_type;
+
+# vendor camera files
+type vendor_camera_data_file, file_type, data_file_type;
