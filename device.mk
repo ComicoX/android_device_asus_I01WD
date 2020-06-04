@@ -85,8 +85,8 @@ PRODUCT_PACKAGES_DEBUG += \
     bootctl
 
 # ZenParts
-PRODUCT_PACKAGES += \
-    ZenParts
+#PRODUCT_PACKAGES += \
+#    ZenParts
 
 # Charger bin
 PRODUCT_COPY_FILES += \
