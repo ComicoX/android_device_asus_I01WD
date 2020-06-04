@@ -85,8 +85,12 @@ PRODUCT_PACKAGES_DEBUG += \
     bootctl
 
 # ZenParts
-#PRODUCT_PACKAGES += \
-#    ZenParts
+PRODUCT_PACKAGES += \
+    ZenParts
+
+# Touch
+PRODUCT_PACKAGES += \
+    lineage.touch@1.0-service.asus_msmnile
 
 # Charger bin
 PRODUCT_COPY_FILES += \
