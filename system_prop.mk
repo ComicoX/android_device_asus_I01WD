@@ -73,7 +73,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.asus.camera.undistortion.video=0:0;1:0;2:0;3:0 \
     ro.asus.camera.use_frame_processor=0 \
     vendor.camera.expTimeMax=0 \
-    vendor.camera.aux.packagelist=com.qualcomm.saltproject2,com.asus.camera,com.asus.snapcam,com.asus.camera2
+    vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.qualcomm.saltproject2,com.asus.camera
 
 # DPM
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -128,15 +128,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	persist.radio.data_ltd_sys_ind=1 \
 	persist.radio.data_con_rprt=1 \
 	persist.radio.calls.on.ims=1
-
-#Simulate sdcard on /data/media
-#
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.fuse_sdcard=true
-
-# Camera Watermark fix
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.product.device=""
 
 # Maintainer
 PRODUCT_PROPERTY_OVERRIDES += \
