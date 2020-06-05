@@ -192,6 +192,12 @@ public class TouchscreenGestureSettings extends PreferenceActivity
                         return R.drawable.ic_gesture_action_camera;
                     case Constants.ACTION_FM_RADIO:
                         return R.drawable.ic_gesture_action_fm_radio;
+                    case Constants.ACTION_CONTROLLER_L:
+                        return R.drawable.ic_gesture_action_none; //to do
+                    case Constants.ACTION_CONTROLLER_R:
+                        return R.drawable.ic_gesture_action_none; //to do
+                    case Constants.ACTION_CONTROLLER_LR:
+                        return R.drawable.ic_gesture_action_none; //to do
                     default:
                         // No gesture action
                         return R.drawable.ic_gesture_action_none;

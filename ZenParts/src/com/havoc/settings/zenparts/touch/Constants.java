@@ -46,6 +46,9 @@ public class Constants {
     static final int ACTION_NEXT_TRACK = 9;
     static final int ACTION_CAMERA_MOTOR = 10;
     static final int ACTION_FM_RADIO = 11;
+    static final int ACTION_CONTROLLER_L = 12;
+    static final int ACTION_CONTROLLER_R = 13;
+    static final int ACTION_CONTROLLER_LR = 14;
 
     // Broadcast extra: keycode mapping (int[]: key = gesture ID, value = keycode)
     static final String UPDATE_EXTRA_KEYCODE_MAPPING = "keycode_mappings";

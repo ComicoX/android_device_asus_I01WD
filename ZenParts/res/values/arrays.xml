@@ -31,6 +31,9 @@
         <item>@string/touchscreen_gesture_action_next_track</item>
         <item>@string/touchscreen_gesture_action_camera_motor</item>
         <item>@string/touchscreen_gesture_action_fm_radio</item>
+        <item>@string/touchscreen_gesture_action_controller_l</item>
+        <item>@string/touchscreen_gesture_action_controller_r</item>
+        <item>@string/touchscreen_gesture_action_controller_lr</item>
     </string-array>
 
     <string-array name="touchscreen_gesture_action_values">
@@ -46,5 +49,8 @@
         <item>9</item>
         <item>10</item>
         <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
     </string-array>
 </resources>

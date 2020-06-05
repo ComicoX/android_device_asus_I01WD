@@ -119,4 +119,7 @@
     <string name="touchscreen_gesture_action_next_track">Play the next music track</string>
     <string name="touchscreen_gesture_action_camera_motor">Open the flip camera widget</string>
     <string name="touchscreen_gesture_action_fm_radio">Open FM radio</string>
+    <string name="touchscreen_gesture_action_controller_l">Controller LB</string>
+    <string name="touchscreen_gesture_action_controller_r">Controller RB</string>
+    <string name="touchscreen_gesture_action_controller_lr">Controller LB + RB</string>
 </resources>

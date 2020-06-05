@@ -49,7 +49,7 @@ import android.util.SparseIntArray;
 import android.view.KeyEvent;
 
 import com.android.internal.os.AlternativeDeviceKeyHandler;
-//import com.android.internal.util.havoc.Utils;
+import com.android.internal.util.havoc.Utils;
 
 import java.util.List;
 
@@ -230,8 +230,33 @@ public class TouchKeyHandler implements DeviceKeyHandler {
                 case Constants.ACTION_FM_RADIO:
                     fmRadio();
                     break;
+                case Constants.ACTION_CONTROLLER_L:
+                    emulateL();
+                    break;
+                case Constants.ACTION_CONTROLLER_R:
+                    emulateR();
+                    break;
+                case Constants.ACTION_CONTROLLER_LR:
+                    emulateLR();
+                    break;
             }
         }
+    }
+
+    private void emulateL() {
+        Utils.sendKeycode(KeyEvent.KEYCODE_BUTTON_L1);
+        doHapticFeedback();
+    }
+
+    private void emulateR() {
+        Utils.sendKeycode(KeyEvent.KEYCODE_BUTTON_R1);
+        doHapticFeedback();
+    }
+
+    private void emulateLR() {
+        Utils.sendKeycode(KeyEvent.KEYCODE_BUTTON_L1);
+        Utils.sendKeycode(KeyEvent.KEYCODE_BUTTON_R1);
+        doHapticFeedback();
     }
 
     private void launchCamera() {
