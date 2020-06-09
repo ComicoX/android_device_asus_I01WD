@@ -122,4 +122,6 @@
     <string name="touchscreen_gesture_action_controller_l">Controller LB</string>
     <string name="touchscreen_gesture_action_controller_r">Controller RB</string>
     <string name="touchscreen_gesture_action_controller_lr">Controller LB + RB</string>
+    <!-- Labels -->
+    <string name="camera_label">Rotate camera</string>
 </resources>
