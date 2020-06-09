@@ -53,7 +53,7 @@ import com.android.internal.util.havoc.Utils;
 
 import java.util.List;
 
-public class TouchKeyHandler implements DeviceKeyHandler {
+public class TouchKeyHandler implements AlternativeDeviceKeyHandler {
 
     private static final String TAG = TouchKeyHandler.class.getSimpleName();
 
