@@ -135,10 +135,11 @@ public class TouchKeyHandler implements AlternativeDeviceKeyHandler {
         }
     }
 
-    public KeyEvent handleKeyEvent(final KeyEvent event) {
+    @Override
+    public boolean handleKeyEvent(final KeyEvent event) {
         final int action = mActionMapping.get(event.getScanCode(), -1);
         if (action < 0 || event.getAction() != KeyEvent.ACTION_UP || !hasSetupCompleted()) {
-            return event;
+            return false;
         }
 
         if (action != 0 && !mEventHandler.hasMessages(GESTURE_REQUEST)) {
@@ -153,7 +154,7 @@ public class TouchKeyHandler implements AlternativeDeviceKeyHandler {
             }
         }
 
-        return null;
+        return true;
     }
 
     private boolean hasSetupCompleted() {
