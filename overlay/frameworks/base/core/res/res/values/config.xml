@@ -686,7 +686,7 @@
 
     <!-- Names of the key handler classes -->
     <string-array name="config_deviceKeyHandlerClasses" translatable="false">
-        <item>com.asus.zenparts.KeyHandler</item>
+        <item>com.havoc.settings.zenparts.touch.TouchKeyHandler</item>
     </string-array>
 
      <!-- Force enable hardware keys -->
