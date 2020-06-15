@@ -24,7 +24,6 @@ import android.content.SharedPreferences;
 import android.util.Log;
 import androidx.preference.PreferenceManager;
 
-import com.havoc.settings.zenparts.doze.DozeUtils;
 import com.havoc.settings.zenparts.touch.TouchscreenGestureSettings;
 
 public class BootCompletedReceiver extends BroadcastReceiver {
@@ -37,7 +36,6 @@ public class BootCompletedReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(final Context context, Intent intent) {
         if (DEBUG) Log.d(TAG, "Received boot completed intent");
-        DozeUtils.checkDozeService(context);
         TouchscreenGestureSettings.MainSettingsFragment.restoreTouchscreenGestureStates(context);
     }
 

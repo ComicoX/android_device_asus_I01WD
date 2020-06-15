@@ -28,23 +28,12 @@ import androidx.preference.PreferenceScreen;
 import androidx.preference.SwitchPreference;
 import androidx.preference.TwoStatePreference;
 
-import com.havoc.settings.zenparts.doze.DozeSettingsActivity;
-
 public class ZenParts extends PreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
         setPreferencesFromResource(R.xml.zenparts, rootKey);
-        Preference mDozePref = findPreference("doze");
-        mDozePref.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
-            @Override
-            public boolean onPreferenceClick(Preference preference) {
-                Intent intent = new Intent(getContext(), DozeSettingsActivity.class);
-                startActivity(intent);
-                return true;
-            }
-        });
     }
 
     @Override
