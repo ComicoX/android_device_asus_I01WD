@@ -109,6 +109,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	persist.radio.data_con_rprt=1 \
 	persist.radio.calls.on.ims=1
 
+# Camera Watermark fix
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.product.device=""
+
 # Maintainer
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.havoc.maintainer=Comico
