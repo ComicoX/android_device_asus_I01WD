@@ -24,7 +24,7 @@ import java.io.IOException;
 import java.io.BufferedReader;
 import java.io.FileReader;
 
-public class util {
+public class ZenUtil {
 
     /**
      * Write a string value to the specified file.

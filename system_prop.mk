@@ -17,23 +17,7 @@
 # Audio
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.config.media_vol_steps=25 \
-    ro.config.vc_call_vol_steps=7 \
-
-#Enable offload audio video playback by default
-PRODUCT_PROPERTY_OVERRIDES += \
-    av.offload.enable=true
-
-#enable offload audio video playback by default
-PRODUCT_PROPERTY_OVERRIDES += \
-    audio.offload.video=true
-#
-##enable music through deep buffer
-PRODUCT_PROPERTY_OVERRIDES += \
-    audio.deep_buffer.media=true
-#
-##set AudioFlinger client heap size
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.af.client_heap_size_kbyte=7168
+    ro.config.vc_call_vol_steps=7
 
 # Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -90,10 +74,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.debug.wfd.enable=1 \
     persist.sys.wfd.virtual=0
 
-# system prop for opengles version
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.opengles.version=196610
-    
 # GPS
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.overlay.izat.optin=rro

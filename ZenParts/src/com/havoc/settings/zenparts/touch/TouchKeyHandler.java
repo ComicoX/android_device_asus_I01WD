@@ -50,6 +50,7 @@ import android.view.KeyEvent;
 
 import com.android.internal.os.AlternativeDeviceKeyHandler;
 import com.android.internal.util.havoc.Utils;
+import com.android.internal.util.ArrayUtils;
 
 import java.util.List;
 
@@ -61,7 +62,9 @@ public class TouchKeyHandler implements AlternativeDeviceKeyHandler {
     private static final int GESTURE_REQUEST = 0;
     private static final int GESTURE_WAKELOCK_DURATION = 3000;
     private static final int EVENT_PROCESS_WAKELOCK_DURATION = 500;
-    private static final String KEY_GESTURE_HAPTIC_FEEDBACK = "touchscreen_gesture_haptic_feedback";
+    private static final String KEY_SMARTKEY_HAPTIC_FEEDBACK = "smartkey_gesture_haptic_feedback";
+    private static final String KEY_FP_HAPTIC_FEEDBACK = "fp_gesture_haptic_feedback";
+    private static final String KEY_TOUCHSCREEN_HAPTIC_FEEDBACK = "touchscreen_gesture_haptic_feedback";    
 
     private final Context mContext;
     private final AudioManager mAudioManager;
@@ -78,6 +81,7 @@ public class TouchKeyHandler implements AlternativeDeviceKeyHandler {
 
     private String mRearCameraId;
     private boolean mTorchEnabled;
+    private String KeyCode;
 
     private final BroadcastReceiver mUpdateReceiver = new BroadcastReceiver() {
         @Override
@@ -135,10 +139,20 @@ public class TouchKeyHandler implements AlternativeDeviceKeyHandler {
         }
     }
 
-    @Override
     public boolean handleKeyEvent(final KeyEvent event) {
         final int action = mActionMapping.get(event.getScanCode(), -1);
         if (action < 0 || event.getAction() != KeyEvent.ACTION_UP || !hasSetupCompleted()) {
+            Log.d(TAG, String.valueOf(event));
+            if(String.valueOf(event).contains("scanCode=34")) {
+                KeyCode = "SmartKey";
+            }
+            if((String.valueOf(event).contains("scanCode=45")) || (String.valueOf(event).contains("scanCode=30")) || (String.valueOf(event).contains("scanCode=48")) || (String.valueOf(event).contains("scanCode=32")) || (String.valueOf(event).contains("scanCode=19"))) {
+                KeyCode = "Fp";
+            }
+            if((String.valueOf(event).contains("scanCode=46")) || (String.valueOf(event).contains("scanCode=47")) || (String.valueOf(event).contains("scanCode=44"))) {
+                KeyCode = "TouchScreen";
+            }            
+            Log.d(TAG, KeyCode);
             return false;
         }
 
@@ -198,6 +212,39 @@ public class TouchKeyHandler implements AlternativeDeviceKeyHandler {
         @Override
         public void handleMessage(final Message msg) {
             switch (msg.arg1) {
+                case Constants.ACTION_BACK:
+                    back();
+                    break;
+                case Constants.ACTION_HOME:
+                    home();
+                    break;
+                case Constants.ACTION_RECENTS:
+                    recents();
+                    break;
+                case Constants.ACTION_UP:
+                    up();
+                    break;
+                case Constants.ACTION_DOWN:
+                    down();
+                    break;
+                case Constants.ACTION_LEFT:
+                    left();
+                    break;
+                case Constants.ACTION_RIGHT:
+                    right();
+                    break;
+                case Constants.ACTION_ASSISTANT:
+                    assistant();
+                    break;
+                case Constants.ACTION_WAKE_UP:
+                    wakeup();
+                    break;
+                case Constants.ACTION_SCREENSHOT:
+                    screenshot();
+                    break;
+                case Constants.ACTION_SCREEN_OFF:
+                    screenOff();
+                    break;
                 case Constants.ACTION_CAMERA:
                     launchCamera();
                     break;
@@ -225,39 +272,164 @@ public class TouchKeyHandler implements AlternativeDeviceKeyHandler {
                 case Constants.ACTION_NEXT_TRACK:
                     nextTrack();
                     break;
+                case Constants.ACTION_VOLUME_DOWN:
+                    volumeDown();
+                    break;
+                case Constants.ACTION_VOLUME_UP:
+                    volumeUp();
+                    break;
                 case Constants.ACTION_CAMERA_MOTOR:
                     cameraMotor();
                     break;
                 case Constants.ACTION_FM_RADIO:
                     fmRadio();
                     break;
-                case Constants.ACTION_CONTROLLER_L:
-                    emulateL();
-                    break;
-                case Constants.ACTION_CONTROLLER_R:
-                    emulateR();
-                    break;
-                case Constants.ACTION_CONTROLLER_LR:
-                    emulateLR();
-                    break;
             }
         }
     }
 
-    private void emulateL() {
-        Utils.sendKeycode(KeyEvent.KEYCODE_BUTTON_L1);
-        doHapticFeedback();
+    private void back() {
+        Utils.sendKeycode(KeyEvent.KEYCODE_BACK);
+        if (KeyCode == "SmartKey") {
+            doSmartkeyHapticFeedback();
+        }
+        if (KeyCode == "Fp") {
+            doFpHapticFeedback();
+        }
+        if (KeyCode == "TouchScreen") {
+            doTouchScreenHapticFeedback();
+        }
     }
 
-    private void emulateR() {
-        Utils.sendKeycode(KeyEvent.KEYCODE_BUTTON_R1);
-        doHapticFeedback();
+    private void home() {
+        Utils.sendKeycode(KeyEvent.KEYCODE_HOME);
+        if (KeyCode == "SmartKey") {
+            doSmartkeyHapticFeedback();
+        }
+        if (KeyCode == "Fp") {
+            doFpHapticFeedback();
+        }
+        if (KeyCode == "TouchScreen") {
+            doTouchScreenHapticFeedback();
+        }
     }
 
-    private void emulateLR() {
-        Utils.sendKeycode(KeyEvent.KEYCODE_BUTTON_L1);
-        Utils.sendKeycode(KeyEvent.KEYCODE_BUTTON_R1);
-        doHapticFeedback();
+    private void recents() {
+        Utils.sendKeycode(KeyEvent.KEYCODE_APP_SWITCH);
+        if (KeyCode == "SmartKey") {
+            doSmartkeyHapticFeedback();
+        }
+        if (KeyCode == "Fp") {
+            doFpHapticFeedback();
+        }
+        if (KeyCode == "TouchScreen") {
+            doTouchScreenHapticFeedback();
+        }
+    }
+
+    private void up() {
+        Utils.sendKeycode(KeyEvent.KEYCODE_DPAD_UP);
+        if (KeyCode == "SmartKey") {
+            doSmartkeyHapticFeedback();
+        }
+        if (KeyCode == "Fp") {
+            doFpHapticFeedback();
+        }
+        if (KeyCode == "TouchScreen") {
+            doTouchScreenHapticFeedback();
+        }
+    }
+
+    private void down() {
+        Utils.sendKeycode(KeyEvent.KEYCODE_DPAD_DOWN);
+        if (KeyCode == "SmartKey") {
+            doSmartkeyHapticFeedback();
+        }
+        if (KeyCode == "Fp") {
+            doFpHapticFeedback();
+        }
+        if (KeyCode == "TouchScreen") {
+            doTouchScreenHapticFeedback();
+        }
+    }
+
+    private void left() {
+        Utils.sendKeycode(KeyEvent.KEYCODE_DPAD_LEFT);
+        if (KeyCode == "SmartKey") {
+            doSmartkeyHapticFeedback();
+        }
+        if (KeyCode == "Fp") {
+            doFpHapticFeedback();
+        }
+        if (KeyCode == "TouchScreen") {
+            doTouchScreenHapticFeedback();
+        }
+    }
+
+    private void right() {
+        Utils.sendKeycode(KeyEvent.KEYCODE_DPAD_RIGHT);
+        if (KeyCode == "SmartKey") {
+            doSmartkeyHapticFeedback();
+        }
+        if (KeyCode == "Fp") {
+            doFpHapticFeedback();
+        }
+        if (KeyCode == "TouchScreen") {
+            doTouchScreenHapticFeedback();
+        }
+    }
+
+    private void assistant() {
+        Utils.sendKeycode(KeyEvent.KEYCODE_ASSIST);
+        if (KeyCode == "SmartKey") {
+            doSmartkeyHapticFeedback();
+        }
+        if (KeyCode == "Fp") {
+            doFpHapticFeedback();
+        }
+        if (KeyCode == "TouchScreen") {
+            doTouchScreenHapticFeedback();
+        }
+    }
+
+    private void wakeup() {
+        Utils.sendKeycode(KeyEvent.KEYCODE_WAKEUP);
+        if (KeyCode == "SmartKey") {
+            doSmartkeyHapticFeedback();
+        }
+        if (KeyCode == "Fp") {
+            doFpHapticFeedback();
+        }
+        if (KeyCode == "TouchScreen") {
+            doTouchScreenHapticFeedback();
+        }
+    }
+
+    private void screenshot() {
+        //Utils.takeScreenshot(true);
+        if (KeyCode == "SmartKey") {
+            doSmartkeyHapticFeedback();
+        }
+        if (KeyCode == "Fp") {
+            doFpHapticFeedback();
+        }
+        if (KeyCode == "TouchScreen") {
+            doTouchScreenHapticFeedback();
+        }
+    }
+
+    private void screenOff() {
+        PowerManager pm = (PowerManager) mContext.getSystemService(Context.POWER_SERVICE);
+        pm.goToSleep(SystemClock.uptimeMillis());
+        if (KeyCode == "SmartKey") {
+            doSmartkeyHapticFeedback();
+        }
+        if (KeyCode == "Fp") {
+            doFpHapticFeedback();
+        }
+        if (KeyCode == "TouchScreen") {
+            doTouchScreenHapticFeedback();
+        }
     }
 
     private void launchCamera() {
@@ -265,7 +437,15 @@ public class TouchKeyHandler implements AlternativeDeviceKeyHandler {
         final Intent intent = new Intent(android.content.Intent.ACTION_SCREEN_CAMERA_GESTURE);
         mContext.sendBroadcastAsUser(intent, UserHandle.CURRENT,
                 Manifest.permission.STATUS_BAR_SERVICE);
-        doHapticFeedback();
+        if (KeyCode == "SmartKey") {
+            doSmartkeyHapticFeedback();
+        }
+        if (KeyCode == "Fp") {
+            doFpHapticFeedback();
+        }
+        if (KeyCode == "TouchScreen") {
+            doTouchScreenHapticFeedback();
+        }
     }
 
     private void launchBrowser() {
@@ -274,7 +454,15 @@ public class TouchKeyHandler implements AlternativeDeviceKeyHandler {
         final Intent intent = getLaunchableIntent(
                 new Intent(Intent.ACTION_VIEW, Uri.parse("http:")));
         startActivitySafely(intent);
-        doHapticFeedback();
+        if (KeyCode == "SmartKey") {
+            doSmartkeyHapticFeedback();
+        }
+        if (KeyCode == "Fp") {
+            doFpHapticFeedback();
+        }
+        if (KeyCode == "TouchScreen") {
+            doTouchScreenHapticFeedback();
+        }
     }
 
     private void launchDialer() {
@@ -282,7 +470,15 @@ public class TouchKeyHandler implements AlternativeDeviceKeyHandler {
         mPowerManager.wakeUp(SystemClock.uptimeMillis(), GESTURE_WAKEUP_REASON);
         final Intent intent = new Intent(Intent.ACTION_DIAL, null);
         startActivitySafely(intent);
-        doHapticFeedback();
+        if (KeyCode == "SmartKey") {
+            doSmartkeyHapticFeedback();
+        }
+        if (KeyCode == "Fp") {
+            doFpHapticFeedback();
+        }
+        if (KeyCode == "TouchScreen") {
+            doTouchScreenHapticFeedback();
+        }
     }
 
     private void launchEmail() {
@@ -291,7 +487,15 @@ public class TouchKeyHandler implements AlternativeDeviceKeyHandler {
         final Intent intent = getLaunchableIntent(
                 new Intent(Intent.ACTION_VIEW, Uri.parse("mailto:")));
         startActivitySafely(intent);
-        doHapticFeedback();
+        if (KeyCode == "SmartKey") {
+            doSmartkeyHapticFeedback();
+        }
+        if (KeyCode == "Fp") {
+            doFpHapticFeedback();
+        }
+        if (KeyCode == "TouchScreen") {
+            doTouchScreenHapticFeedback();
+        }
     }
 
     private void launchMessages() {
@@ -300,7 +504,15 @@ public class TouchKeyHandler implements AlternativeDeviceKeyHandler {
         final Intent intent = getLaunchableIntent(
                 new Intent(Intent.ACTION_VIEW, Uri.parse("sms:")));
         startActivitySafely(intent);
-        doHapticFeedback();
+        if (KeyCode == "SmartKey") {
+            doSmartkeyHapticFeedback();
+        }
+        if (KeyCode == "Fp") {
+            doFpHapticFeedback();
+        }
+        if (KeyCode == "TouchScreen") {
+            doTouchScreenHapticFeedback();
+        }
     }
 
     private void toggleFlashlight() {
@@ -313,23 +525,83 @@ public class TouchKeyHandler implements AlternativeDeviceKeyHandler {
             } catch (CameraAccessException e) {
                 // Ignore
             }
-            doHapticFeedback();
+            if (KeyCode == "SmartKey") {
+            doSmartkeyHapticFeedback();
+        }
+        if (KeyCode == "Fp") {
+            doFpHapticFeedback();
+        }
+        if (KeyCode == "TouchScreen") {
+            doTouchScreenHapticFeedback();
+        }
         }
     }
 
     private void playPauseMusic() {
         dispatchMediaKeyWithWakeLockToMediaSession(KeyEvent.KEYCODE_MEDIA_PLAY_PAUSE);
-        doHapticFeedback();
+        if (KeyCode == "SmartKey") {
+            doSmartkeyHapticFeedback();
+        }
+        if (KeyCode == "Fp") {
+            doFpHapticFeedback();
+        }
+        if (KeyCode == "TouchScreen") {
+            doTouchScreenHapticFeedback();
+        }
     }
 
     private void previousTrack() {
         dispatchMediaKeyWithWakeLockToMediaSession(KeyEvent.KEYCODE_MEDIA_PREVIOUS);
-        doHapticFeedback();
+        if (KeyCode == "SmartKey") {
+            doSmartkeyHapticFeedback();
+        }
+        if (KeyCode == "Fp") {
+            doFpHapticFeedback();
+        }
+        if (KeyCode == "TouchScreen") {
+            doTouchScreenHapticFeedback();
+        }
     }
 
     private void nextTrack() {
         dispatchMediaKeyWithWakeLockToMediaSession(KeyEvent.KEYCODE_MEDIA_NEXT);
-        doHapticFeedback();
+        if (KeyCode == "SmartKey") {
+            doSmartkeyHapticFeedback();
+        }
+        if (KeyCode == "Fp") {
+            doFpHapticFeedback();
+        }
+        if (KeyCode == "TouchScreen") {
+            doTouchScreenHapticFeedback();
+        }
+    }
+
+    private void volumeDown() {
+        mGestureWakeLock.acquire(GESTURE_WAKELOCK_DURATION);
+        mAudioManager.adjustStreamVolume(AudioManager.STREAM_MUSIC, AudioManager.ADJUST_LOWER, 0);
+        if (KeyCode == "SmartKey") {
+            doSmartkeyHapticFeedback();
+        }
+        if (KeyCode == "Fp") {
+            doFpHapticFeedback();
+        }
+        if (KeyCode == "TouchScreen") {
+            doTouchScreenHapticFeedback();
+        }
+    }
+
+    private void volumeUp() {
+        mGestureWakeLock.acquire(GESTURE_WAKELOCK_DURATION);
+        mAudioManager.adjustStreamVolume(AudioManager.STREAM_MUSIC, AudioManager.ADJUST_RAISE, 0);
+        if (KeyCode == "SmartKey") {
+            doSmartkeyHapticFeedback();
+        }
+        if (KeyCode == "Fp") {
+            doFpHapticFeedback();
+        }
+        if (KeyCode == "TouchScreen") {
+            doTouchScreenHapticFeedback();
+        }
     }
 
     private void cameraMotor() {
@@ -338,7 +610,15 @@ public class TouchKeyHandler implements AlternativeDeviceKeyHandler {
         Intent intent = new Intent("com.asus.motorservice.action.WIDGET_BTN_CLICKED");
         intent.setPackage("com.asus.motorservice");
         mContext.sendBroadcast(intent);
-        doHapticFeedback();
+        if (KeyCode == "SmartKey") {
+            doSmartkeyHapticFeedback();
+        }
+        if (KeyCode == "Fp") {
+            doFpHapticFeedback();
+        }
+        if (KeyCode == "TouchScreen") {
+            doTouchScreenHapticFeedback();
+        }
     }
 
     private void fmRadio() {
@@ -346,7 +626,15 @@ public class TouchKeyHandler implements AlternativeDeviceKeyHandler {
         mPowerManager.wakeUp(SystemClock.uptimeMillis(), GESTURE_WAKEUP_REASON);
         Intent LaunchIntent = mContext.getPackageManager().getLaunchIntentForPackage("com.asus.fmradio");
         mContext.startActivity(LaunchIntent);
-        doHapticFeedback();
+        if (KeyCode == "SmartKey") {
+            doSmartkeyHapticFeedback();
+        }
+        if (KeyCode == "Fp") {
+            doFpHapticFeedback();
+        }
+        if (KeyCode == "TouchScreen") {
+            doTouchScreenHapticFeedback();
+        }
     }
 
     private void dispatchMediaKeyWithWakeLockToMediaSession(final int keycode) {
@@ -378,13 +666,37 @@ public class TouchKeyHandler implements AlternativeDeviceKeyHandler {
         }
     }
 
-    private void doHapticFeedback() {
+    private void doSmartkeyHapticFeedback() {
         if (mVibrator == null) {
             return;
         }
 
         final boolean enabled = Settings.System.getInt(mContext.getContentResolver(),
-                KEY_GESTURE_HAPTIC_FEEDBACK, 1) != 0;
+                KEY_SMARTKEY_HAPTIC_FEEDBACK, 1) != 0;
+        if (enabled) {
+            mVibrator.vibrate(50);
+        }
+    }
+
+    private void doFpHapticFeedback() {
+        if (mVibrator == null) {
+            return;
+        }
+
+        final boolean enabled = Settings.System.getInt(mContext.getContentResolver(),
+                KEY_FP_HAPTIC_FEEDBACK, 1) != 0;
+        if (enabled) {
+            mVibrator.vibrate(50);
+        }
+    }
+
+    private void doTouchScreenHapticFeedback() {
+        if (mVibrator == null) {
+            return;
+        }
+
+        final boolean enabled = Settings.System.getInt(mContext.getContentResolver(),
+                KEY_TOUCHSCREEN_HAPTIC_FEEDBACK, 1) != 0;
         if (enabled) {
             mVibrator.vibrate(50);
         }
@@ -416,5 +728,39 @@ public class TouchKeyHandler implements AlternativeDeviceKeyHandler {
             return null;
         }
         return pm.getLaunchIntentForPackage(resInfo.get(0).activityInfo.packageName);
+    }
+
+    @Override
+    public boolean isDisabledKeyEvent(KeyEvent event) {
+        return false;
+    }
+
+    @Override
+    public boolean isWakeEvent(KeyEvent event){
+        if (event.getAction() != KeyEvent.ACTION_UP) {
+            return false;
+        }
+        return event.getScanCode() == Constants.GESTURE_DOUBLE_CLICK;
+    }
+
+    @Override
+    public boolean isCameraLaunchEvent(KeyEvent event) {
+        if (event.getAction() != KeyEvent.ACTION_UP) {
+            return false;
+        }
+        return event.getScanCode() == Constants.GESTURE_C;
+   }
+
+    @Override
+    public boolean canHandleKeyEvent(KeyEvent event) {
+        return ArrayUtils.contains(Constants.sSupportedKeycodes, event.getScanCode());
+    }
+    
+    @Override
+    public Intent isActivityLaunchEvent(KeyEvent event) {
+        if (event.getAction() != KeyEvent.ACTION_UP) {
+            return null;
+        }
+        return null;
     }
 }

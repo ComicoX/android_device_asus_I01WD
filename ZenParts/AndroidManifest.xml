@@ -75,20 +75,31 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </receiver>
+        <service 
+            android:name=".doze.DozeService"
+            android:permission="AsusDozeService">
+        </service>
+        <activity
+            android:name=".doze.DozeSettingsActivity"
+            android:label="@string/ambient_display_title"
+            android:theme="@style/Theme.Main">
+        </activity>
+        <activity
+            android:name=".touch.SmartkeyGestureSettings"
+            android:label="@string/smartkey_gesture_settings_title"
+            android:theme="@style/Theme.Main">
+        </activity>
+        <activity
+            android:name=".touch.FpGestureSettings"
+            android:label="@string/fp_gesture_settings_title"
+            android:theme="@style/Theme.Main">
+        </activity>
         <activity
             android:name=".touch.TouchscreenGestureSettings"
             android:label="@string/touchscreen_gesture_settings_title"
             android:theme="@style/Theme.Main">
         </activity>
-        <service
-            android:name="com.havoc.settings.zenparts.camera.CameraTile"
-            android:icon="@drawable/ic_camera_tile"
-            android:label="@string/camera_label"
-            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
-            <intent-filter>
-                <action android:name="android.service.quicksettings.action.QS_TILE" />
-            </intent-filter>
-        </service>
+
     </application>
 
 </manifest>

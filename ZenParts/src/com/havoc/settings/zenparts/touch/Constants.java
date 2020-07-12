@@ -35,24 +35,56 @@ public class Constants {
     static final String UPDATE_PREFS_ACTION = "com.havoc.settings.zenparts.touch.UPDATE_SETTINGS";
 
     // Screen off Gesture actions
-    static final int ACTION_FLASHLIGHT = 1;
-    static final int ACTION_CAMERA = 2;
-    static final int ACTION_BROWSER = 3;
-    static final int ACTION_DIALER = 4;
-    static final int ACTION_EMAIL = 5;
-    static final int ACTION_MESSAGES = 6;
-    static final int ACTION_PLAY_PAUSE_MUSIC = 7;
-    static final int ACTION_PREVIOUS_TRACK = 8;
-    static final int ACTION_NEXT_TRACK = 9;
-    static final int ACTION_CAMERA_MOTOR = 10;
-    static final int ACTION_FM_RADIO = 11;
-    static final int ACTION_CONTROLLER_L = 12;
-    static final int ACTION_CONTROLLER_R = 13;
-    static final int ACTION_CONTROLLER_LR = 14;
+    static final int ACTION_BACK = 2;
+    static final int ACTION_HOME = 3;
+    static final int ACTION_RECENTS = 4;
+    static final int ACTION_UP = 5;
+    static final int ACTION_DOWN = 6;
+    static final int ACTION_LEFT = 7;
+    static final int ACTION_RIGHT = 8;
+    static final int ACTION_ASSISTANT = 9;
+    static final int ACTION_WAKE_UP = 10;
+    static final int ACTION_SCREENSHOT = 11;
+    static final int ACTION_SCREEN_OFF = 12;
+    static final int ACTION_FLASHLIGHT = 13;
+    static final int ACTION_CAMERA = 14;
+    static final int ACTION_BROWSER = 15;
+    static final int ACTION_DIALER = 16;
+    static final int ACTION_EMAIL = 17;
+    static final int ACTION_MESSAGES = 18;
+    static final int ACTION_PLAY_PAUSE_MUSIC = 19;
+    static final int ACTION_PREVIOUS_TRACK = 20;
+    static final int ACTION_NEXT_TRACK = 21;
+    static final int ACTION_VOLUME_DOWN = 22;
+    static final int ACTION_VOLUME_UP = 23;
+    static final int ACTION_CAMERA_MOTOR = 24;
+    static final int ACTION_FM_RADIO = 25;
 
     // Broadcast extra: keycode mapping (int[]: key = gesture ID, value = keycode)
     static final String UPDATE_EXTRA_KEYCODE_MAPPING = "keycode_mappings";
     // Broadcast extra: assigned actions (int[]: key = gesture ID, value = action)
     static final String UPDATE_EXTRA_ACTION_MAPPING = "action_mappings";
 
+    static final int GESTURE_DOUBLE_CLICK = 116;
+    static final int GESTURE_SWIPE_UP = 103;
+    static final int GESTURE_W = 17;
+    static final int GESTURE_S = 31;
+    static final int GESTURE_E = 18;
+    static final int GESTURE_C = 46;
+    static final int GESTURE_Z = 44;
+    static final int GESTURE_V = 47;
+    static final int SMART_KEY = 584;
+
+    static final int[] sSupportedKeycodes = new int[]
+    {
+        GESTURE_DOUBLE_CLICK,
+        GESTURE_SWIPE_UP,
+        GESTURE_W,
+        GESTURE_S,
+        GESTURE_E,
+        GESTURE_C,
+        GESTURE_Z,
+        GESTURE_V,
+        SMART_KEY
+    };
 }

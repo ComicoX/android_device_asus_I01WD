@@ -44,11 +44,11 @@ TARGET_NO_BOOTLOADER := true
 
 # Init
 TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_zen
+TARGET_RECOVERY_DEVICE_MODULES := libinit_zen
 
 # Kernel
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_CMDLINE := console=ttyMSM0,115200n8 androidboot.hardware=qcom androidboot.console=ttyMSM0 androidboot.memcg=1 lpm_levels.sleep_disabled=1 video=vfb:640x400,bpp=32,memsize=3072000 msm_rtb.filter=0x237 service_locator.enable=1 swiotlb=2048 firmware_class.path=/vendor/firmware_mnt/image loop.max_part=7 androidboot.usbcontroller=a600000.dwc3
-#BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 BOARD_KERNEL_PAGESIZE := 4096
 BOARD_KERNEL_SEPARATED_DTBO := true
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
@@ -57,7 +57,7 @@ TARGET_KERNEL_CLANG_COMPILE := true
 TARGET_KERNEL_CONFIG := vendor/zs630kl_defconfig
 TARGET_KERNEL_SOURCE := kernel/asus/sm8150
 TARGET_PREBUILT_RECOVERY_RAMDISK_CPIO := $(DEVICE_PATH)/ramdisk-recovery.cpio
-TARGET_KERNEL_CLANG_VERSION := latest
+#TARGET_KERNEL_CLANG_VERSION := latest
 
 # Platform
 BOARD_USES_QCOM_HARDWARE := true
@@ -66,6 +66,9 @@ TARGET_BOARD_PLATFORM_GPU := qcom-adreno640
 
 # Properties
 BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
+
+# SurfaceFlinger
+TARGET_USE_QCOM_SURFACEFLINGER := true
 
 # Treble
 DEVICE_FRAMEWORK_MANIFEST_FILE += $(DEVICE_PATH)/framework_manifest.xml
@@ -96,7 +99,6 @@ endif
 
 # Display
 TARGET_USES_HWC2 := true
-TARGET_ADDITIONAL_GRALLOC_10_USAGE_BITS := (1 << 21) | (1 << 27)
 
 # DRM
 TARGET_ENABLE_MEDIADRM_64 := true
@@ -109,7 +111,7 @@ BOARD_HAS_QCA_FM_SOC := "cherokee"
 BOARD_HAVE_QCOM_FM := true
 
 # OTA
-TARGET_OTA_ASSERT_DEVICE := WW_I01WD
+TARGET_OTA_ASSERT_DEVICE := I01WD, WW_I01WD
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 100663296
@@ -161,5 +163,4 @@ BOARD_PLAT_PRIVATE_SEPOLICY_DIR += \
 
 # Verified Boot
 BOARD_AVB_ENABLE := true
-BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --set_hashtree_disabled_flag
-BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flags 2
+BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flag 2

@@ -27,6 +27,7 @@ $(call inherit-product-if-exists, vendor/asus/I01WD/I01WD-vendor.mk)
 # Boot animation
 TARGET_SCREEN_HEIGHT := 2340
 TARGET_SCREEN_WIDTH := 1080
+TARGET_BOOT_ANIMATION_RES := 1080
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
@@ -71,9 +72,9 @@ PRODUCT_PACKAGES += \
     audio.a2dp.default
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_PRODUCT)/vendor_overlay/29/etc/audio/audio_policy_configuration.xml \
-    $(LOCAL_PATH)/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_PRODUCT)/vendor_overlay/29/etc/audio_policy_configuration.xml \
-    $(LOCAL_PATH)/audio/audio_policy_volumes_ZS630KL.xml:$(TARGET_COPY_OUT_PRODUCT)/vendor_overlay/29/etc/audio_policy_volumes_ZS630KL.xml \
+    $(LOCAL_PATH)/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_PRODUCT)/vendor_overlay/$(PRODUCT_TARGET_VNDK_VERSION)/etc/audio/audio_policy_configuration.xml \
+    $(LOCAL_PATH)/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_PRODUCT)/vendor_overlay/$(PRODUCT_TARGET_VNDK_VERSION)/etc/audio_policy_configuration.xml \
+    $(LOCAL_PATH)/audio/audio_policy_volumes_ZS630KL.xml:$(TARGET_COPY_OUT_PRODUCT)/vendor_overlay/$(PRODUCT_TARGET_VNDK_VERSION)/etc/audio_policy_volumes_ZS630KL.xml \
     $(LOCAL_PATH)/audio/mixer_paths_tavil.xml:$(TARGET_COPY_OUT_PRODUCT)/vendor_overlay/29/etc/mixer_paths_tavil.xml
 
 # Boot control
@@ -239,14 +240,7 @@ PRODUCT_PACKAGES += \
 
 # Display
 PRODUCT_PACKAGES += \
-    libdisplayconfig \
-    libqdMetaData \
-    libqdMetaData.system \
-    libvulkan \
-    vendor.display.config@1.0
-
-PRODUCT_PACKAGES += \
-    vendor.display.config@1.7
+    libvulkan
 
 # WiFi Display
 PRODUCT_PACKAGES += \
@@ -328,10 +322,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_BOOT_JARS += \
     telephony-ext
 
-# Trust HAL
-PRODUCT_PACKAGES += \
-    lineage.trust@1.0-service
-
 # Update engine
 PRODUCT_PACKAGES += \
     otapreopt_script \
@@ -341,4 +331,3 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES_DEBUG += \
     update_engine_client
-

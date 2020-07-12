@@ -18,7 +18,39 @@
 -->
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
-    
+
+    <PreferenceCategory
+        android:title="@string/smartkey_gesture_category">
+
+        <Preference
+            android:key="smartkey_gesture_category"
+            android:title="@string/smartkey_gesture_settings_title"
+            android:summary="@string/smartkey_gesture_settings_summary"
+            android:icon="@drawable/ic_smartkey"
+            android:persistent="false" >
+            <intent android:action="android.intent.action.MAIN"
+                    android:targetPackage="com.havoc.settings.zenparts"
+                    android:targetClass="com.havoc.settings.zenparts.touch.SmartkeyGestureSettings" />
+        </Preference>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/fp_gesture_category">
+
+        <Preference
+            android:key="fp_gesture_category"
+            android:title="@string/fp_gesture_settings_title"
+            android:summary="@string/fp_gesture_settings_summary"
+            android:icon="@drawable/ic_fingerprint"
+            android:persistent="false" >
+            <intent android:action="android.intent.action.MAIN"
+                    android:targetPackage="com.havoc.settings.zenparts"
+                    android:targetClass="com.havoc.settings.zenparts.touch.FpGestureSettings" />
+        </Preference>
+
+    </PreferenceCategory>
+
     <PreferenceCategory
         android:title="@string/touchscreen_gesture_category">
 

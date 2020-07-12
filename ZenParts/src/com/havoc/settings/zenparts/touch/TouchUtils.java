@@ -31,11 +31,11 @@ import java.io.IOException;
 import java.io.BufferedReader;
 import java.io.FileReader;
 
-public class Utils {
+public class TouchUtils {
 
-    private static final String TAG = Utils.class.getSimpleName();
+    private static final String TAG = TouchUtils.class.getSimpleName();
 
-    public static final String PREFERENCES = "UtilsPreferences";
+    public static final String PREFERENCES = "TouchUtilsPreferences";
 
     public static String getLocalizedString(final Resources res,
                                             final String stringName,

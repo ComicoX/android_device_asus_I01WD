@@ -26,7 +26,7 @@ public class ZenPartsTileService extends TileService {
     @Override
     public void onClick() {
         try {
-            Intent intent = new Intent(this, ZenPartsActivity.class);
+            Intent intent = new Intent(this, ZenPartsTileService.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivityAndCollapse(intent);
         } catch (ActivityNotFoundException ignored) {
