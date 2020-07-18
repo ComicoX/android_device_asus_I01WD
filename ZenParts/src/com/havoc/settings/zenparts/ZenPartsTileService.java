@@ -32,6 +32,7 @@ public class ZenPartsTileService extends TileService {
         } catch (ActivityNotFoundException ignored) {
             // At this point, the app is most likely hidden and set to only open from Settings
             Intent intent = new Intent(this, ZenParts.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivityAndCollapse(intent);
         }
     }

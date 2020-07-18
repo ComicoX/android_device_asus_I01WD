@@ -32,7 +32,7 @@ import com.havoc.settings.zenparts.touch.TouchscreenGestureSettings;
 public class BootCompletedReceiver extends BroadcastReceiver {
 
     private static final boolean DEBUG = false;
-    private static final String TAG = "AsusParts";
+    private static final String TAG = "ZenParts";
 
     private static final String ONE_TIME_TUNABLE_RESTORE = "hardware_tunable_restored";
 

@@ -99,7 +99,15 @@
             android:label="@string/touchscreen_gesture_settings_title"
             android:theme="@style/Theme.Main">
         </activity>
-
+        <service
+            android:name=".camera.CameraTile"
+            android:icon="@drawable/ic_camera_tile"
+            android:label="@string/camera_label"
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE" />
+            </intent-filter>
+        </service>
     </application>
 
 </manifest>
