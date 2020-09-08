@@ -65,26 +65,4 @@ public class Constants {
     // Broadcast extra: assigned actions (int[]: key = gesture ID, value = action)
     static final String UPDATE_EXTRA_ACTION_MAPPING = "action_mappings";
 
-    static final int GESTURE_DOUBLE_CLICK = 116;
-    static final int GESTURE_SWIPE_UP = 103;
-    static final int GESTURE_W = 17;
-    static final int GESTURE_S = 31;
-    static final int GESTURE_E = 18;
-    static final int GESTURE_C = 46;
-    static final int GESTURE_Z = 44;
-    static final int GESTURE_V = 47;
-    static final int SMART_KEY = 584;
-
-    static final int[] sSupportedKeycodes = new int[]
-    {
-        GESTURE_DOUBLE_CLICK,
-        GESTURE_SWIPE_UP,
-        GESTURE_W,
-        GESTURE_S,
-        GESTURE_E,
-        GESTURE_C,
-        GESTURE_Z,
-        GESTURE_V,
-        SMART_KEY
-    };
 }

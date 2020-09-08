@@ -48,13 +48,13 @@ import android.util.Log;
 import android.util.SparseIntArray;
 import android.view.KeyEvent;
 
-import com.android.internal.os.AlternativeDeviceKeyHandler;
+import com.android.internal.os.DeviceKeyHandler;
 import com.android.internal.util.havoc.Utils;
 import com.android.internal.util.ArrayUtils;
 
 import java.util.List;
 
-public class TouchKeyHandler implements AlternativeDeviceKeyHandler {
+public class TouchKeyHandler implements DeviceKeyHandler {
 
     private static final String TAG = TouchKeyHandler.class.getSimpleName();
 
@@ -139,7 +139,7 @@ public class TouchKeyHandler implements AlternativeDeviceKeyHandler {
         }
     }
 
-    public boolean handleKeyEvent(final KeyEvent event) {
+    public KeyEvent handleKeyEvent(final KeyEvent event) {
         final int action = mActionMapping.get(event.getScanCode(), -1);
         if (action < 0 || event.getAction() != KeyEvent.ACTION_UP || !hasSetupCompleted()) {
             Log.d(TAG, String.valueOf(event));
@@ -153,7 +153,7 @@ public class TouchKeyHandler implements AlternativeDeviceKeyHandler {
                 KeyCode = "TouchScreen";
             }            
             Log.d(TAG, KeyCode);
-            return false;
+            return event;
         }
 
         if (action != 0 && !mEventHandler.hasMessages(GESTURE_REQUEST)) {
@@ -168,7 +168,7 @@ public class TouchKeyHandler implements AlternativeDeviceKeyHandler {
             }
         }
 
-        return true;
+        return null;
     }
 
     private boolean hasSetupCompleted() {
@@ -728,39 +728,5 @@ public class TouchKeyHandler implements AlternativeDeviceKeyHandler {
             return null;
         }
         return pm.getLaunchIntentForPackage(resInfo.get(0).activityInfo.packageName);
-    }
-
-    @Override
-    public boolean isDisabledKeyEvent(KeyEvent event) {
-        return false;
-    }
-
-    @Override
-    public boolean isWakeEvent(KeyEvent event){
-        if (event.getAction() != KeyEvent.ACTION_UP) {
-            return false;
-        }
-        return event.getScanCode() == Constants.GESTURE_DOUBLE_CLICK;
-    }
-
-    @Override
-    public boolean isCameraLaunchEvent(KeyEvent event) {
-        if (event.getAction() != KeyEvent.ACTION_UP) {
-            return false;
-        }
-        return event.getScanCode() == Constants.GESTURE_C;
-   }
-
-    @Override
-    public boolean canHandleKeyEvent(KeyEvent event) {
-        return ArrayUtils.contains(Constants.sSupportedKeycodes, event.getScanCode());
-    }
-    
-    @Override
-    public Intent isActivityLaunchEvent(KeyEvent event) {
-        if (event.getAction() != KeyEvent.ACTION_UP) {
-            return null;
-        }
-        return null;
     }
 }

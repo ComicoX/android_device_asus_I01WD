@@ -150,4 +150,5 @@
     <string name="touchscreen_gesture_action_volume_up">Raise media volume</string>
     <string name="touchscreen_gesture_action_camera_motor">Open the flip camera widget</string>
     <string name="touchscreen_gesture_action_fm_radio">Open FM radio</string>
+    <string name="camera_label">Rotate camera</string>
 </resources>
