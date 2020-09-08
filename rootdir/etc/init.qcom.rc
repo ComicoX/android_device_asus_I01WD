@@ -2,6 +2,9 @@ on boot
     # Google Key
     write /sys/devices/platform/soc/soc:asustek_googlekey/googlekey_enable 1
 
+    # Double tap to wake
+    chown system system /proc/driver/dclick
+    
     # Chown node for Smart_Charging
     chown system system /sys/class/power_supply/battery/input_suspend
 
