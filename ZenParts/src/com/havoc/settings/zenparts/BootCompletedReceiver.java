@@ -27,7 +27,6 @@ import androidx.preference.PreferenceManager;
 import com.havoc.settings.zenparts.doze.DozeUtils;
 import com.havoc.settings.zenparts.touch.SmartkeyGestureSettings;
 import com.havoc.settings.zenparts.touch.FpGestureSettings;
-import com.havoc.settings.zenparts.touch.TouchscreenGestureSettings;
 
 public class BootCompletedReceiver extends BroadcastReceiver {
 
@@ -42,7 +41,6 @@ public class BootCompletedReceiver extends BroadcastReceiver {
         DozeUtils.checkDozeService(context);
         SmartkeyGestureSettings.MainSettingsFragment.restoreSmartkeyGestureStates(context);
         FpGestureSettings.MainSettingsFragment.restoreFpGestureStates(context);
-        TouchscreenGestureSettings.MainSettingsFragment.restoreTouchscreenGestureStates(context);
     }
 
     private boolean hasRestoredTunable(Context context) {
