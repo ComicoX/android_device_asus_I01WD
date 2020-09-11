@@ -467,7 +467,7 @@ public class TouchKeyHandler implements DeviceKeyHandler {
     private void fmRadio() {
         mGestureWakeLock.acquire(GESTURE_WAKELOCK_DURATION);
         mPowerManager.wakeUp(SystemClock.uptimeMillis(), GESTURE_WAKEUP_REASON);
-        Intent LaunchIntent = mContext.getPackageManager().getLaunchIntentForPackage("com.asus.fmradio");
+        Intent LaunchIntent = mContext.getPackageManager().getLaunchIntentForPackage("com.caf.fmradio");
         mContext.startActivity(LaunchIntent);
         doHapticFeedback();
     }
