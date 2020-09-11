@@ -25,6 +25,7 @@ import android.content.IntentFilter;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.content.res.Resources;
+import android.hardware.Camera;
 import android.hardware.camera2.CameraAccessException;
 import android.hardware.camera2.CameraCharacteristics;
 import android.hardware.camera2.CameraManager;
@@ -82,6 +83,7 @@ public class TouchKeyHandler implements DeviceKeyHandler {
     private String mRearCameraId;
     private boolean mTorchEnabled;
     private String KeyCode;
+    private Camera mCamera;
 
     private final BroadcastReceiver mUpdateReceiver = new BroadcastReceiver() {
         @Override
@@ -424,9 +426,24 @@ public class TouchKeyHandler implements DeviceKeyHandler {
         mAudioManager.adjustStreamVolume(AudioManager.STREAM_MUSIC, AudioManager.ADJUST_RAISE, 0);
         doHapticFeedback();
     }
+
+    private void closeCamera() {
+        if (mCamera != null) {
+            mCamera.release();
+            mCamera = null;
         }
-        if (KeyCode == "Fp") {
-            doFpHapticFeedback();
+    }
+
+    private boolean checkCamera() {
+        closeCamera();
+        try {
+            mCamera = mCamera.open();
+
+            //Close camera
+            closeCamera();
+            return false;
+        } catch (Exception e) {
+            return true;
         }
     }
 
@@ -435,12 +452,13 @@ public class TouchKeyHandler implements DeviceKeyHandler {
         mPowerManager.wakeUp(SystemClock.uptimeMillis(), GESTURE_WAKEUP_REASON);
         Intent intent = new Intent("com.asus.motorservice.action.WIDGET_BTN_CLICKED");
         intent.setPackage("com.asus.motorservice");
-        mContext.sendBroadcast(intent);
-        if (KeyCode == "SmartKey") {
-            doSmartkeyHapticFeedback();
+        if(checkCamera() == true)
+        {
+            mContext.sendBroadcast(intent);
         }
-        if (KeyCode == "Fp") {
-            doFpHapticFeedback();
+        else
+        {
+            launchCamera();
         }
 
         doHapticFeedback();
