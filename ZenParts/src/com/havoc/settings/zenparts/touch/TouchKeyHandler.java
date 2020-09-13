@@ -443,6 +443,7 @@ public class TouchKeyHandler implements DeviceKeyHandler {
             closeCamera();
             return false;
         } catch (Exception e) {
+            closeCamera();
             return true;
         }
     }
