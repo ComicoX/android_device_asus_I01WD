@@ -324,12 +324,12 @@ public class TouchKeyHandler implements DeviceKeyHandler {
         }
 
     private void assistant() {
-        Utils.sendKeycode(KeyEvent.KEYCODE_ASSIST);
+        ActionUtils.launchVoiceSearch(mContext);
         doHapticFeedback();
     }
 
     private void wakeup() {
-        Utils.sendKeycode(KeyEvent.KEYCODE_WAKEUP);
+        ActionUtils.switchScreenOn(mContext);
         doHapticFeedback();
     }
 
@@ -339,17 +339,12 @@ public class TouchKeyHandler implements DeviceKeyHandler {
     }
 
     private void screenOff() {
-        PowerManager pm = (PowerManager) mContext.getSystemService(Context.POWER_SERVICE);
-        pm.goToSleep(SystemClock.uptimeMillis());
+        ActionUtils.switchScreenOff(mContext);
         doHapticFeedback();
     }
 
     private void launchCamera() {
-        mGestureWakeLock.acquire(GESTURE_WAKELOCK_DURATION);
-        final Intent intent = new Intent(android.content.Intent.ACTION_SCREEN_CAMERA_GESTURE);
-        mContext.sendBroadcastAsUser(intent, UserHandle.CURRENT,
-                Manifest.permission.STATUS_BAR_SERVICE);
-        doHapticFeedback();
+        ActionUtils.launchCamera(mContext);
     }
 
     private void launchBrowser() {
@@ -388,17 +383,7 @@ public class TouchKeyHandler implements DeviceKeyHandler {
         }
 
     private void toggleFlashlight() {
-        String rearCameraId = getRearCameraId();
-        if (rearCameraId != null) {
-            mGestureWakeLock.acquire(GESTURE_WAKELOCK_DURATION);
-            try {
-                mCameraManager.setTorchMode(rearCameraId, !mTorchEnabled);
-                mTorchEnabled = !mTorchEnabled;
-            } catch (CameraAccessException e) {
-                // Ignore
-            }
-        doHapticFeedback();
-        }
+        ActionUtils.toggleCameraFlash();
         }
 
     private void playPauseMusic() {
