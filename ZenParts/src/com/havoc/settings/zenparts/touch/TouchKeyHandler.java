@@ -51,6 +51,7 @@ import android.view.KeyEvent;
 
 import com.android.internal.os.DeviceKeyHandler;
 import com.android.internal.util.havoc.Utils;
+import com.android.internal.util.havoc.ActionUtils;
 import com.android.internal.util.ArrayUtils;
 
 import java.util.List;
@@ -333,7 +334,7 @@ public class TouchKeyHandler implements DeviceKeyHandler {
     }
 
     private void screenshot() {
-        //Utils.takeScreenshot(true);
+        ActionUtils.takeScreenshot(true);
         doHapticFeedback();
     }
 
