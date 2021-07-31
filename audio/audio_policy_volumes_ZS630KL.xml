@@ -29,24 +29,6 @@ volume index from 0 to 100.
         <point>66,-1400</point>
         <point>100,0</point>
     </volume>
-    <volume stream="AUDIO_STREAM_VOICE_CALL" deviceCategory="DEVICE_CATEGORY_HEADSET_nonEU">
-        <point>0,-4200</point>
-        <point>33,-2800</point>
-        <point>66,-1400</point>
-        <point>100,0</point>
-    </volume>
-    <volume stream="AUDIO_STREAM_VOICE_CALL" deviceCategory="DEVICE_CATEGORY_BLUETOOTH">
-        <point>0,-4200</point>
-        <point>33,-2800</point>
-        <point>66,-1400</point>
-        <point>100,0</point>
-    </volume>
-    <volume stream="AUDIO_STREAM_VOICE_CALL" deviceCategory="DEVICE_CATEGORY_BLUETOOTH_ABSOLUTE">
-        <point>0,-4200</point>
-        <point>33,-2800</point>
-        <point>66,-1400</point>
-        <point>100,0</point>
-    </volume>
     <volume stream="AUDIO_STREAM_VOICE_CALL" deviceCategory="DEVICE_CATEGORY_SPEAKER">
         <point>0,-3600</point>
         <point>33,-2400</point>
@@ -69,24 +51,6 @@ volume index from 0 to 100.
         <point>66,-2600</point>
         <point>100,-1800</point>
     </volume>
-    <volume stream="AUDIO_STREAM_SYSTEM" deviceCategory="DEVICE_CATEGORY_HEADSET_nonEU">
-        <point>1,-4800</point>
-        <point>33,-4000</point>
-        <point>66,-3200</point>
-        <point>100,-2400</point>
-    </volume>
-    <volume stream="AUDIO_STREAM_SYSTEM" deviceCategory="DEVICE_CATEGORY_BLUETOOTH">
-        <point>1,-4950</point>
-        <point>33,-3350</point>
-        <point>66,-1700</point>
-        <point>100,0</point>
-    </volume>
-    <volume stream="AUDIO_STREAM_SYSTEM" deviceCategory="DEVICE_CATEGORY_BLUETOOTH_ABSOLUTE">
-        <point>1,-4950</point>
-        <point>33,-3350</point>
-        <point>66,-1700</point>
-        <point>100,0</point>
-    </volume>
     <volume stream="AUDIO_STREAM_SYSTEM" deviceCategory="DEVICE_CATEGORY_SPEAKER">
         <point>1,-4200</point>
         <point>33,-3300</point>
@@ -104,24 +68,6 @@ volume index from 0 to 100.
         <point>33,-4200</point>
         <point>66,-3000</point>
         <point>100,-1800</point>
-    </volume>
-    <volume stream="AUDIO_STREAM_RING" deviceCategory="DEVICE_CATEGORY_HEADSET_nonEU">
-        <point>1,-6000</point>
-        <point>33,-4800</point>
-        <point>66,-3600</point>
-        <point>100,-2400</point>
-    </volume>
-    <volume stream="AUDIO_STREAM_RING" deviceCategory="DEVICE_CATEGORY_BLUETOOTH">
-        <point>1,-4950</point>
-        <point>33,-3350</point>
-        <point>66,-1700</point>
-        <point>100,0</point>
-    </volume>
-    <volume stream="AUDIO_STREAM_RING" deviceCategory="DEVICE_CATEGORY_BLUETOOTH_ABSOLUTE">
-        <point>1,-4950</point>
-        <point>33,-3350</point>
-        <point>66,-1700</point>
-        <point>100,0</point>
     </volume>
     <volume stream="AUDIO_STREAM_RING" deviceCategory="DEVICE_CATEGORY_SPEAKER">
         <point>1,-5400</point>
@@ -141,24 +87,10 @@ volume index from 0 to 100.
         <point>66,-2250</point>
         <point>100,0</point>
     </volume>
-    <volume stream="AUDIO_STREAM_MUSIC" deviceCategory="DEVICE_CATEGORY_HEADSET_nonEU"
-                                        ref="DEFAULT_MEDIA_VOLUME_CURVE"/>
-    <volume stream="AUDIO_STREAM_MUSIC" deviceCategory="DEVICE_CATEGORY_BLUETOOTH">
-        <point>1,-5900</point>
-        <point>33,-4000</point>
-        <point>66,-2000</point>
-        <point>100,0</point>
-    </volume>
-    <volume stream="AUDIO_STREAM_MUSIC" deviceCategory="DEVICE_CATEGORY_BLUETOOTH_ABSOLUTE">
-        <point>1,-4500</point>
-        <point>33,-2500</point>
-        <point>66,-1000</point>
-        <point>100,0</point>
-    </volume>
     <volume stream="AUDIO_STREAM_MUSIC" deviceCategory="DEVICE_CATEGORY_SPEAKER"
                                         ref="DEFAULT_DEVICE_CATEGORY_SPEAKER_VOLUME_CURVE"/>
     <volume stream="AUDIO_STREAM_MUSIC" deviceCategory="DEVICE_CATEGORY_EARPIECE">
-        <point>0,-2700</point>
+        <point>1,-2700</point>
         <point>33,-1800</point>
         <point>66,-900</point>
         <point>100,0</point>
@@ -172,24 +104,6 @@ volume index from 0 to 100.
         <point>33,-4200</point>
         <point>66,-3000</point>
         <point>100,-1800</point>
-    </volume>
-    <volume stream="AUDIO_STREAM_ALARM" deviceCategory="DEVICE_CATEGORY_HEADSET_nonEU">
-        <point>0,-6000</point>
-        <point>33,-4800</point>
-        <point>66,-3600</point>
-        <point>100,-2400</point>
-    </volume>
-    <volume stream="AUDIO_STREAM_ALARM" deviceCategory="DEVICE_CATEGORY_BLUETOOTH">
-        <point>1,-4950</point>
-        <point>33,-3350</point>
-        <point>66,-1700</point>
-        <point>100,0</point>
-    </volume>
-    <volume stream="AUDIO_STREAM_ALARM" deviceCategory="DEVICE_CATEGORY_BLUETOOTH_ABSOLUTE">
-        <point>1,-4950</point>
-        <point>33,-3350</point>
-        <point>66,-1700</point>
-        <point>100,0</point>
     </volume>
     <volume stream="AUDIO_STREAM_ALARM" deviceCategory="DEVICE_CATEGORY_SPEAKER">
         <point>1,-5400</point>
@@ -209,24 +123,6 @@ volume index from 0 to 100.
         <point>66,-3000</point>
         <point>100,-1800</point>
     </volume>
-    <volume stream="AUDIO_STREAM_NOTIFICATION" deviceCategory="DEVICE_CATEGORY_HEADSET_nonEU">
-        <point>1,-6000</point>
-        <point>33,-4800</point>
-        <point>66,-3600</point>
-        <point>100,-2400</point>
-    </volume>
-    <volume stream="AUDIO_STREAM_NOTIFICATION" deviceCategory="DEVICE_CATEGORY_BLUETOOTH">
-        <point>1,-4950</point>
-        <point>33,-3350</point>
-        <point>66,-1700</point>
-        <point>100,0</point>
-    </volume>
-    <volume stream="AUDIO_STREAM_NOTIFICATION" deviceCategory="DEVICE_CATEGORY_BLUETOOTH_ABSOLUTE">
-        <point>1,-4950</point>
-        <point>33,-3350</point>
-        <point>66,-1700</point>
-        <point>100,0</point>
-    </volume>
     <volume stream="AUDIO_STREAM_NOTIFICATION" deviceCategory="DEVICE_CATEGORY_SPEAKER">
         <point>1,-4800</point>
         <point>33,-3600</point>
@@ -240,24 +136,6 @@ volume index from 0 to 100.
     <volume stream="AUDIO_STREAM_NOTIFICATION" deviceCategory="DEVICE_CATEGORY_HEARING_AID"
                                                ref="DEFAULT_DEVICE_CATEGORY_HEADSET_VOLUME_CURVE"/>
     <volume stream="AUDIO_STREAM_BLUETOOTH_SCO" deviceCategory="DEVICE_CATEGORY_HEADSET">
-        <point>0,-4200</point>
-        <point>33,-2800</point>
-        <point>66,-1400</point>
-        <point>100,0</point>
-    </volume>
-    <volume stream="AUDIO_STREAM_BLUETOOTH_SCO" deviceCategory="DEVICE_CATEGORY_HEADSET_nonEU">
-        <point>0,-4200</point>
-        <point>33,-2800</point>
-        <point>66,-1400</point>
-        <point>100,0</point>
-    </volume>
-    <volume stream="AUDIO_STREAM_BLUETOOTH_SCO" deviceCategory="DEVICE_CATEGORY_BLUETOOTH">
-        <point>0,-4200</point>
-        <point>33,-2800</point>
-        <point>66,-1400</point>
-        <point>100,0</point>
-    </volume>
-    <volume stream="AUDIO_STREAM_BLUETOOTH_SCO" deviceCategory="DEVICE_CATEGORY_BLUETOOTH_ABSOLUTE">
         <point>0,-4200</point>
         <point>33,-2800</point>
         <point>66,-1400</point>
@@ -285,24 +163,6 @@ volume index from 0 to 100.
         <point>66,-2200</point>
         <point>100,-1800</point>
     </volume>
-    <volume stream="AUDIO_STREAM_ENFORCED_AUDIBLE" deviceCategory="DEVICE_CATEGORY_HEADSET_nonEU">
-        <point>1,-3000</point>
-        <point>33,-2600</point>
-        <point>66,-2200</point>
-        <point>100,-1800</point>
-    </volume>
-    <volume stream="AUDIO_STREAM_ENFORCED_AUDIBLE" deviceCategory="DEVICE_CATEGORY_BLUETOOTH">
-        <point>1,-3000</point>
-        <point>33,-2600</point>
-        <point>66,-2200</point>
-        <point>100,-1800</point>
-    </volume>
-    <volume stream="AUDIO_STREAM_ENFORCED_AUDIBLE" deviceCategory="DEVICE_CATEGORY_BLUETOOTH_ABSOLUTE">
-        <point>1,-3000</point>
-        <point>33,-2600</point>
-        <point>66,-2200</point>
-        <point>100,-1800</point>
-    </volume>
     <volume stream="AUDIO_STREAM_ENFORCED_AUDIBLE" deviceCategory="DEVICE_CATEGORY_SPEAKER"
                                                    ref="DEFAULT_SYSTEM_VOLUME_CURVE"/>
     <volume stream="AUDIO_STREAM_ENFORCED_AUDIBLE" deviceCategory="DEVICE_CATEGORY_EARPIECE"
@@ -316,24 +176,6 @@ volume index from 0 to 100.
         <point>33,-4000</point>
         <point>66,-3200</point>
         <point>100,-2400</point>
-    </volume>
-    <volume stream="AUDIO_STREAM_DTMF" deviceCategory="DEVICE_CATEGORY_HEADSET_nonEU">
-        <point>1,-5400</point>
-        <point>33,-4600</point>
-        <point>66,-3800</point>
-        <point>100,-3000</point>
-    </volume>
-    <volume stream="AUDIO_STREAM_DTMF" deviceCategory="DEVICE_CATEGORY_BLUETOOTH">
-        <point>1,-4950</point>
-        <point>33,-3350</point>
-        <point>66,-1700</point>
-        <point>100,0</point>
-    </volume>
-    <volume stream="AUDIO_STREAM_DTMF" deviceCategory="DEVICE_CATEGORY_BLUETOOTH_ABSOLUTE">
-        <point>1,-4950</point>
-        <point>33,-3350</point>
-        <point>66,-1700</point>
-        <point>100,0</point>
     </volume>
     <volume stream="AUDIO_STREAM_DTMF" deviceCategory="DEVICE_CATEGORY_SPEAKER">
         <point>1,-5400</point>
@@ -349,12 +191,6 @@ volume index from 0 to 100.
                                        ref="DEFAULT_HEARING_AID_VOLUME_CURVE"/>
     <volume stream="AUDIO_STREAM_TTS" deviceCategory="DEVICE_CATEGORY_HEADSET"
                                       ref="SILENT_VOLUME_CURVE"/>
-    <volume stream="AUDIO_STREAM_TTS" deviceCategory="DEVICE_CATEGORY_HEADSET_nonEU"
-                                      ref="SILENT_VOLUME_CURVE"/>
-    <volume stream="AUDIO_STREAM_TTS" deviceCategory="DEVICE_CATEGORY_BLUETOOTH"
-                                      ref="SILENT_VOLUME_CURVE"/>
-    <volume stream="AUDIO_STREAM_TTS" deviceCategory="DEVICE_CATEGORY_BLUETOOTH_ABSOLUTE"
-                                      ref="SILENT_VOLUME_CURVE"/>
     <volume stream="AUDIO_STREAM_TTS" deviceCategory="DEVICE_CATEGORY_SPEAKER"
                                       ref="FULL_SCALE_VOLUME_CURVE"/>
     <volume stream="AUDIO_STREAM_TTS" deviceCategory="DEVICE_CATEGORY_EARPIECE"
@@ -365,12 +201,6 @@ volume index from 0 to 100.
                                       ref="SILENT_VOLUME_CURVE"/>
     <volume stream="AUDIO_STREAM_ACCESSIBILITY" deviceCategory="DEVICE_CATEGORY_HEADSET"
                                                 ref="DEFAULT_NON_MUTABLE_VOLUME_CURVE"/>
-    <volume stream="AUDIO_STREAM_ACCESSIBILITY" deviceCategory="DEVICE_CATEGORY_HEADSET_nonEU"
-                                                ref="DEFAULT_NON_MUTABLE_VOLUME_CURVE"/>
-    <volume stream="AUDIO_STREAM_ACCESSIBILITY" deviceCategory="DEVICE_CATEGORY_BLUETOOTH"
-                                      ref="DEFAULT_NON_MUTABLE_VOLUME_CURVE"/>
-    <volume stream="AUDIO_STREAM_ACCESSIBILITY" deviceCategory="DEVICE_CATEGORY_BLUETOOTH_ABSOLUTE"
-                                      ref="DEFAULT_NON_MUTABLE_VOLUME_CURVE"/>
     <volume stream="AUDIO_STREAM_ACCESSIBILITY" deviceCategory="DEVICE_CATEGORY_SPEAKER"
                                                 ref="DEFAULT_NON_MUTABLE_SPEAKER_VOLUME_CURVE"/>
     <volume stream="AUDIO_STREAM_ACCESSIBILITY" deviceCategory="DEVICE_CATEGORY_EARPIECE"
@@ -381,12 +211,6 @@ volume index from 0 to 100.
                                                 ref="DEFAULT_NON_MUTABLE_HEARING_AID_VOLUME_CURVE"/>
     <volume stream="AUDIO_STREAM_REROUTING" deviceCategory="DEVICE_CATEGORY_HEADSET"
                                             ref="FULL_SCALE_VOLUME_CURVE"/>
-    <volume stream="AUDIO_STREAM_REROUTING" deviceCategory="DEVICE_CATEGORY_HEADSET_nonEU"
-                                            ref="FULL_SCALE_VOLUME_CURVE"/>
-    <volume stream="AUDIO_STREAM_REROUTING" deviceCategory="DEVICE_CATEGORY_BLUETOOTH"
-                                      ref="FULL_SCALE_VOLUME_CURVE"/>
-    <volume stream="AUDIO_STREAM_REROUTING" deviceCategory="DEVICE_CATEGORY_BLUETOOTH_ABSOLUTE"
-                                      ref="FULL_SCALE_VOLUME_CURVE"/>
     <volume stream="AUDIO_STREAM_REROUTING" deviceCategory="DEVICE_CATEGORY_SPEAKER"
                                             ref="FULL_SCALE_VOLUME_CURVE"/>
     <volume stream="AUDIO_STREAM_REROUTING" deviceCategory="DEVICE_CATEGORY_EARPIECE"
@@ -397,12 +221,6 @@ volume index from 0 to 100.
                                             ref="FULL_SCALE_VOLUME_CURVE"/>
     <volume stream="AUDIO_STREAM_PATCH" deviceCategory="DEVICE_CATEGORY_HEADSET"
                                         ref="FULL_SCALE_VOLUME_CURVE"/>
-    <volume stream="AUDIO_STREAM_PATCH" deviceCategory="DEVICE_CATEGORY_HEADSET_nonEU"
-                                        ref="FULL_SCALE_VOLUME_CURVE"/>
-    <volume stream="AUDIO_STREAM_PATCH" deviceCategory="DEVICE_CATEGORY_BLUETOOTH"
-                                      ref="FULL_SCALE_VOLUME_CURVE"/>
-    <volume stream="AUDIO_STREAM_PATCH" deviceCategory="DEVICE_CATEGORY_BLUETOOTH_ABSOLUTE"
-                                      ref="FULL_SCALE_VOLUME_CURVE"/>
     <volume stream="AUDIO_STREAM_PATCH" deviceCategory="DEVICE_CATEGORY_SPEAKER"
                                         ref="FULL_SCALE_VOLUME_CURVE"/>
     <volume stream="AUDIO_STREAM_PATCH" deviceCategory="DEVICE_CATEGORY_EARPIECE"
