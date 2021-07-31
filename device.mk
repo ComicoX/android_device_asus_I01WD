@@ -308,6 +308,10 @@ PRODUCT_SOONG_NAMESPACES += \
 PRODUCT_PACKAGES += \
     RemovePackages
 
+# Systemhelper
+PRODUCT_PACKAGES += \
+    vendor.qti.hardware.systemhelper@1.0
+
 # Telephony
 PRODUCT_PACKAGES += \
     ims-ext-common \
