@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <permissions>
-    <privapp-permissions package="com.android.phone"> 
-        <permission name="android.permission.OVERRIDE_WIFI_CONFIG"/> 
-    </privapp-permissions>
     <privapp-permissions package="com.asus.camera">
         <permission name="android.permission.WRITE_MEDIA_STORAGE"/>
         <permission name="android.permission.WRITE_SECURE_SETTINGS"/>
@@ -17,8 +14,5 @@
         <permission name="android.permission.LOCAL_MAC_ADDRESS"/>
         <permission name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
         <permission name="android.permission.WRITE_MEDIA_STORAGE"/>
-    </privapp-permissions>
-    <privapp-permissions package="com.havoc.settings.zenparts">
-        <permission name="android.permission.INTERACT_ACROSS_USERS"/>
     </privapp-permissions>
 </permissions>
