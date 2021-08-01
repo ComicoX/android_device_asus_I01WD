@@ -6,7 +6,6 @@ type demoapp_file, file_type;
 type log_file, file_type;
 type firmware_file, fs_type, contextmount_type;
 type persist_file, file_type;
-type voucher_file, file_type;
 type xrom_file, file_type;
 
 type sysfs_googlekey, sysfs_type, fs_type;

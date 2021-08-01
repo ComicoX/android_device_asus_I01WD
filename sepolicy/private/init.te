@@ -4,9 +4,6 @@ allow init sysfs_gesture:file { rw_file_perms setattr };
 # Allow init to bind mount over vendor file
 allow init { system_file vendor_file }:file mounton;
 
-# Allow init to mount vendor configs
-allow init vendor_configs_file:dir mounton;
-
 # Allow init to chown/chmod on pseudo files in /sys
 allow init sysfs_googlekey:file w_file_perms;
 

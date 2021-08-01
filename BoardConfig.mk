@@ -135,7 +135,6 @@ BOARD_ROOT_EXTRA_FOLDERS := \
     APD \
     asdf \
     batinfo \
-    voucher \
     xrom
 
 # Telephony
@@ -143,6 +142,7 @@ TARGET_PROVIDES_QTI_TELEPHONY_JAR := true
 
 # Sepolicy
 BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(DEVICE_PATH)/sepolicy/private
+PRODUCT_PRIVATE_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/product/private
 
 # Sepolicy
 include device/qcom/sepolicy/SEPolicy.mk
