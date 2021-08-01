@@ -19,7 +19,7 @@ BOARD_VENDOR := asus
 DEVICE_PATH := device/asus/I01WD
 
 # Build
-ALLOW_MISSING_DEPENDENCIES := true
+BUILD_BROKEN_USES_BUILD_COPY_HEADERS := true
 
 # Architecture
 TARGET_ARCH := arm64
